@@ -33,11 +33,11 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
         return JSON
     }
     
-    @IBOutlet var refresh: UIButton
-    @IBOutlet var loading: UIActivityIndicatorView
-    @IBOutlet var numPeople: UILabel
-    @IBOutlet var list: UILabel
-    @IBOutlet var descriptionText: UILabel
+    @IBOutlet weak var refresh: UIButton!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    @IBOutlet weak var numPeople: UILabel!
+    @IBOutlet weak var list: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
 
     @IBAction func reload(){
         numPeople.hidden = true
