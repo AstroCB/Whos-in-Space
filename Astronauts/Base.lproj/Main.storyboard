@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="132" y="466" width="56" height="33"/>
+                                    <rect key="frame" x="132" y="463" width="56" height="33"/>
                                 </variation>
                                 <connections>
                                     <action selector="reload" destination="vXZ-lx-hvc" eventType="touchUpInside" id="j8T-vE-S2x"/>
@@ -48,30 +48,30 @@
                                     <rect key="frame" x="0.0" y="85" width="320" height="153"/>
                                 </variation>
                             </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="gIn-ep-JqW">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="31" y="246" width="259" height="212"/>
-                                </variation>
-                            </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="Uto-ad-Pnm">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="31" y="217" width="259" height="64"/>
+                                    <rect key="frame" x="31" y="217" width="259" height="56"/>
                                 </variation>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-ku-TFQ">
-                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="259" translatesAutoresizingMaskIntoConstraints="NO" id="gIn-ep-JqW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="150" y="438" width="20" height="20"/>
+                                    <rect key="frame" x="31" y="281" width="259" height="149"/>
                                 </variation>
-                            </activityIndicatorView>
+                            </label>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="iyV-B7-0M9">
+                                <rect key="frame" x="0.0" y="-50" width="320" height="50"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="504" width="320" height="50"/>
+                                </variation>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <variation key="default">
@@ -79,9 +79,9 @@
                                 <exclude reference="Gfo-oS-hti"/>
                                 <exclude reference="Biy-Xn-y2P"/>
                                 <exclude reference="Jew-qV-f2R"/>
-                                <exclude reference="gIn-ep-JqW"/>
                                 <exclude reference="Uto-ad-Pnm"/>
-                                <exclude reference="pzt-ku-TFQ"/>
+                                <exclude reference="gIn-ep-JqW"/>
+                                <exclude reference="iyV-B7-0M9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -89,16 +89,16 @@
                                 <include reference="Gfo-oS-hti"/>
                                 <include reference="Biy-Xn-y2P"/>
                                 <include reference="Jew-qV-f2R"/>
-                                <include reference="gIn-ep-JqW"/>
                                 <include reference="Uto-ad-Pnm"/>
-                                <include reference="pzt-ku-TFQ"/>
+                                <include reference="gIn-ep-JqW"/>
+                                <include reference="iyV-B7-0M9"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="ad" destination="iyV-B7-0M9" id="MT1-IG-mql"/>
                         <outlet property="descriptionText" destination="Uto-ad-Pnm" id="coD-mX-5e5"/>
                         <outlet property="list" destination="gIn-ep-JqW" id="ccX-a1-u53"/>
-                        <outlet property="loading" destination="pzt-ku-TFQ" id="DPY-uD-Jnq"/>
                         <outlet property="numPeople" destination="Jew-qV-f2R" id="Gyi-mt-I37"/>
                         <outlet property="refresh" destination="Gfo-oS-hti" id="a35-SO-bDz"/>
                     </connections>

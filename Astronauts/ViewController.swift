@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import iAd
 
-class ViewController: UIViewController, NSURLConnectionDelegate {
+class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        loading.hidesWhenStopped = true
         loadData()
+        self.canDisplayBannerAds = true
+        self.ad.delegate = self
+        self.ad.alpha = 0.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,48 +37,101 @@ class ViewController: UIViewController, NSURLConnectionDelegate {
     }
     
     @IBOutlet weak var refresh: UIButton!
-    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var numPeople: UILabel!
     @IBOutlet weak var list: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
-
+    @IBOutlet weak var ad: ADBannerView!
+    
+    var urls:[String] = [] //holds URLs for astronauts
+    var ind:Int = 0 //give each astronaut an ID to keep track
+    var buttons:[UIButton] = []
+    
     @IBAction func reload(){
         numPeople.hidden = true
         list.hidden = true
         descriptionText.hidden = true
-        loadData();
+        
+        for(var i = 0; i < ind; i++){ //remove all of the buttons
+            buttons[i].removeFromSuperview()
+        }
+        
+        buttons = []
+        
+        ind = 0
+        
+        loadData()
+    }
+    
+    func labelTapped(sender:UIButton!) { //handles button clicks
+        let urlIndex = sender.tag
+        if (urlIndex >= 0 && urlIndex < self.urls.count) {
+            openUrl(urls[urlIndex])
+        }
+    }
+    
+    func openUrl(url:String!) { //opens URLs
+        let targetURL = NSURL.URLWithString(url)
+        
+        let application = UIApplication.sharedApplication()
+        
+        application.openURL(targetURL);
+        
     }
     
     func loadData(){
-        loading.startAnimating()
-        
-        var request = getJSON("http://api.open-notify.org/astros.json")
+        var request:NSData? = getJSON("http://api.open-notify.org/astros.json")
         if(request != nil){
-            var data = parseJSON(request)
+            var data = parseJSON(request!)
             for (key, value) in data {
                 if key as String == "number" {
                     numPeople.hidden = false
                     list.hidden = false
                     descriptionText.hidden = false
-                    numPeople.text = String(value.integerValue)
+                    var num:Int = value.integerValue
+                    numPeople.text = String(num)
                     list.text = ""
                     descriptionText.text = "astronauts are in space.\nThey are:"
                 } else if key as String == "people" {
-                    var counter:Int = 0;
+                    var x:CGFloat = 10, y:CGFloat = 275 //positions
                     for person in value as NSArray {
-                        let name = person["name"] as String
-                        let craft = person["craft"] as String
-                        list.text = list.text + "\n\(name): \(craft)"
-                        counter++
+                        let name = person["name"] as String //name of astronaut
+                        let craft = person["craft"] as String //location of astronaut
+                        
+                        var encodedURL = ""
+                        
+                        for j in name {
+                            if j == " " {
+                                encodedURL = encodedURL + "+"
+                            } else {
+                                encodedURL = encodedURL + (String(j))
+                            }
+                        }
+                        
+                        urls.append("http://google.com/search?q=" + encodedURL)
+                        
+                        //create a button for each astronaut
+                        let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
+                        
+                        button.tag = ind
+                        button.frame = CGRectMake(x, y, 300, 30)
+                        button.titleLabel.font = UIFont(name: "Garamond", size: 15)
+                        button.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
+                        button.setTitle("\(name): \(craft)", forState: UIControlState.Normal)
+                        button.addTarget(self, action: "labelTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+                        
+                        buttons.append(button)
+                        
+                        self.view.addSubview(button)
+                        
+                        y += 30 //move each button down
+                        
+                        ind++
                     }
-                    list.numberOfLines = (counter + 1) //dynamically set number of lines for label based on number of people it has to fit
                 }
             }
         }else{
             descriptionText.hidden = false
             descriptionText.text = "Data currently unavailable.\nCheck your network connection."
         }
-        
-        loading.stopAnimating()
     }
 }
