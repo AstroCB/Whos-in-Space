@@ -19,7 +19,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
         let refresh = UIButton.buttonWithType(UIButtonType.System) as UIButton //create refresh button
         
         refresh.frame = CGRectMake(110, height/1.23, 100, 50)
-        refresh.titleLabel.font = UIFont(name: "Arial", size: 15)
+        refresh.titleLabel?.font = UIFont(name: "Arial", size: 15)
         refresh.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
         refresh.setTitle("Refresh", forState: UIControlState.Normal)
         refresh.addTarget(self, action: "reload:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -136,7 +136,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
                         
                         button.tag = ind
                         button.frame = CGRectMake(x, y, 300, 30)
-                        button.titleLabel.font = UIFont(name: "Arial", size: 17)
+                        button.titleLabel?.font = UIFont(name: "Arial", size: 17)
                         button.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
                         button.setTitle("\(name): \(craft)", forState: UIControlState.Normal)
                         button.addTarget(self, action: "labelTapped:", forControlEvents: UIControlEvents.TouchUpInside)
