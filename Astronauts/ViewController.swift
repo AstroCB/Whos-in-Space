@@ -41,11 +41,13 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
         return NSData(contentsOfURL: NSURL(string: urlToRequest))
     }
     
-    func parseJSON(inputData: NSData) -> NSDictionary {
+    func parseJSON(inputData: NSData) -> NSDictionary? {
         var error: NSError?
-        let JSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary
+        if let JSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
+                return JSON
+        }
         
-        return JSON
+        return nil
     }
     
     let descriptionText = UILabel()
@@ -94,9 +96,9 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
         var x:CGFloat = 10, y:CGFloat = height/2.3 //positions
         
         if(request != nil){
-            var data = parseJSON(request!)
+            var data = parseJSON(request!)!
             for (key, value) in data {
-                if key as String == "number" {
+                if key as NSString == "number" {
                     numPeople.hidden = false
                     descriptionText.hidden = false
                     let num:Int = value.integerValue
@@ -114,14 +116,14 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
                     
                     self.view.addSubview(numPeople)
                     self.view.addSubview(descriptionText)
-                } else if key as String == "people" {
-                    for person in value as NSArray {
-                        let name = person["name"] as String //name of astronaut
-                        let craft = person["craft"] as String //location of astronaut
+                } else if key as NSString == "people" {
+                    for person in (value as NSArray) {
+                        let name: AnyObject? = person["name"]! //name of astronaut
+                        let craft: AnyObject? = person["craft"]! //location of astronaut
                         
                         var encodedURL = ""
                         
-                        for j in name {
+                        for j in "\(name!)" {
                             if j == " " {
                                 encodedURL = encodedURL + "+"
                             } else {
@@ -138,7 +140,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
                         button.frame = CGRectMake(x, y, 300, 30)
                         button.titleLabel?.font = UIFont(name: "Arial", size: 17)
                         button.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
-                        button.setTitle("\(name): \(craft)", forState: UIControlState.Normal)
+                        button.setTitle("\(name!): \(craft!)", forState: UIControlState.Normal)
                         button.addTarget(self, action: "labelTapped:", forControlEvents: UIControlEvents.TouchUpInside)
                         
                         buttons.append(button)
