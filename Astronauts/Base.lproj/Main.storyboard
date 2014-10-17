@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who's in space right now?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Biy-Xn-y2P">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Who's in space right now?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Lmc-lC-Bbh">
+                                <rect key="frame" x="160" y="28" width="280" height="76"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -25,23 +26,47 @@
                                     <rect key="frame" x="20" y="20" width="280" height="76"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-vr-ZWz">
+                                <rect key="frame" x="274" y="539" width="53" height="30"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reload:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Adc-ne-xrp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="astronauts are in space. They are:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ber-j0-FIL">
+                                <rect key="frame" x="154" y="210" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVQ-uj-aZi">
+                                <rect key="frame" x="274" y="112" width="53" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="88"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Biy-Xn-y2P"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Biy-Xn-y2P"/>
-                            </mask>
-                        </variation>
+                        <constraints>
+                            <constraint firstItem="eVQ-uj-aZi" firstAttribute="centerY" secondItem="Ber-j0-FIL" secondAttribute="centerY" constant="-72" id="0Z9-9P-9JZ"/>
+                            <constraint firstItem="eVQ-uj-aZi" firstAttribute="centerX" secondItem="Lmc-lC-Bbh" secondAttribute="centerX" constant="0.5" id="6r8-BF-NlZ"/>
+                            <constraint firstAttribute="centerX" secondItem="VQk-vr-ZWz" secondAttribute="centerX" constant="-0.5" id="JB5-sB-fcW"/>
+                            <constraint firstAttribute="centerX" secondItem="Ber-j0-FIL" secondAttribute="centerX" constant="-0.5" id="TUQ-X8-vVY"/>
+                            <constraint firstAttribute="centerX" secondItem="eVQ-uj-aZi" secondAttribute="centerX" id="TWS-Xs-YH8"/>
+                            <constraint firstAttribute="centerX" secondItem="Lmc-lC-Bbh" secondAttribute="centerX" id="nNu-ij-NKG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionText" destination="Ber-j0-FIL" id="PuF-Nr-Fag"/>
+                        <outlet property="numPeople" destination="eVQ-uj-aZi" id="ubs-oS-79I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="439.5" y="414"/>
+            <point key="canvasLocation" x="401" y="404"/>
         </scene>
     </scenes>
 </document>

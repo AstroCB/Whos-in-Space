@@ -16,15 +16,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let refresh = UIButton.buttonWithType(UIButtonType.System) as UIButton //create refresh button
-        
-        refresh.frame = CGRectMake(110, height/1.23, 100, 50)
-        refresh.titleLabel?.font = UIFont(name: "Arial", size: 15)
-        refresh.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        refresh.setTitle("Refresh", forState: UIControlState.Normal)
-        refresh.addTarget(self, action: "reload:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(refresh)
-        
+        descriptionText.text = "astronauts are in space. They are:"
         loadData()
         
         self.canDisplayBannerAds = true
@@ -43,23 +35,24 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
     
     func parseJSON(inputData: NSData) -> NSDictionary? {
         var error: NSError?
-        if let JSON:NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
+        if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
             return JSON
         }
         
         return nil
     }
     
-    let descriptionText = UILabel()
+
     let ad = ADBannerView()
-    let numPeople = UILabel()
+    @IBOutlet weak var numPeople: UILabel!
+    @IBOutlet weak var descriptionText: UILabel!
     
     
     var urls: [String] = [] //holds URLs for astronauts
     var ind: Int = 0 //give each astronaut an ID to keep track
     var buttons: [UIButton] = []
     
-    func reload(sender:UIButton!) {
+    @IBAction func reload(sender:UIButton!) {
         numPeople.hidden = true
         descriptionText.hidden = true
         
@@ -83,7 +76,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
     
     func openUrl(url: String!) { //opens URLs
         let targetURL = NSURL(fileURLWithPath: url)!
-        
         let application = UIApplication.sharedApplication()
         
         application.openURL(targetURL);
@@ -93,7 +85,7 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
     func loadData(){
         var request: NSData? = getJSON("http://api.open-notify.org/astros.json")
         
-        var x:CGFloat = 10, y:CGFloat = height/2.3 //positions
+        var x:CGFloat = height/15.0, y:CGFloat = height/2.3 //positions
         
         if(request != nil){
             var data = parseJSON(request!)!
@@ -104,19 +96,6 @@ class ViewController: UIViewController, NSURLConnectionDelegate, ADBannerViewDel
             let num: Int = data.valueForKey("number")!.integerValue
             let value: AnyObject? = data.valueForKey("people");
             
-            numPeople.text = String(num)
-            numPeople.textColor = UIColor.whiteColor()
-            numPeople.font = UIFont(name: "Arial", size: 100)
-            numPeople.frame = CGRectMake(130, 0, 100, 273)
-            
-            descriptionText.textColor = UIColor.whiteColor()
-            descriptionText.frame = CGRectMake(25, height/2.9, 275, 50)
-            descriptionText.textAlignment = NSTextAlignment.Center
-            descriptionText.numberOfLines = 2
-            descriptionText.text = "astronauts are in space.\nThey are:"
-            
-            self.view.addSubview(numPeople)
-            self.view.addSubview(descriptionText)
             for person in (value as NSArray) {
                 let name: AnyObject? = person["name"]! //name of astronaut
                 let craft: AnyObject? = person["craft"]! //location of astronaut
