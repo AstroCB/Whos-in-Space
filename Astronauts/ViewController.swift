@@ -11,21 +11,32 @@ import iAd
 
 class ViewController: UIViewController, ADBannerViewDelegate {
     let height: CGFloat = UIScreen.mainScreen().bounds.size.height // Grab screen size
-    let width: CGFloat = UIScreen.mainScreen().bounds.size.width
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // iAd setup
-        if height <= 480 {
+        // Initial load
+        loadData()
+        
+        let refresh: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "share")
+        refresh.tintColor = UIColor.whiteColor()
+        
+        let gear: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Gear"), style: UIBarButtonItemStyle.Bordered, target: self, action: "openSettings")
+        gear.tintColor = UIColor.whiteColor()
+        
+        let rightButtons: [UIBarButtonItem] = [refresh, gear]
+        self.navigationItem.rightBarButtonItems = rightButtons
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // iAd setup based on IAP
+        if NSUserDefaults.standardUserDefaults().boolForKey("astroPro") {
+            println("No ads")
             self.canDisplayBannerAds = false
         } else {
             self.canDisplayBannerAds = true
         }
-        
-        // Initial load
-        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,13 +61,14 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     @IBOutlet weak var descriptionText: UILabel!
     @IBOutlet weak var trailText: UILabel!
     @IBOutlet weak var ad: ADBannerView!
+    var connected: Bool = false
     
     
     var urls: [String] = [] // Holds URLs for astronauts
     var ind: Int = 0 // Give each astronaut an ID to keep track
     var buttons: [UIButton] = []
     
-    @IBAction func reload(sender:UIButton!) {
+    @IBAction func reload() {
         numPeople.hidden = true
         descriptionText.hidden = true
         
@@ -101,7 +113,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
             constMultiplier = 1.05
         case 667: // 6
             dist = 50
-            constMultiplier = 1.075
+            constMultiplier = 1.08
         case 736: // 6 Plus
             dist = 70
             constMultiplier = 1.1
@@ -111,6 +123,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         }
         
         if let request: NSData = getJSON("http://api.open-notify.org/astros.json") {
+            connected = true
             let data: NSDictionary = parseJSON(request)!
             numPeople.hidden = false
             descriptionText.hidden = false
@@ -168,30 +181,55 @@ class ViewController: UIViewController, ADBannerViewDelegate {
                     ind++
                 }
             }
-        }else{ // No connection...or the API has been taken down, which would be bad (and possibly my fault)
+        } else { // No connection...or the API has been taken down, which would be bad (and possibly my fault)
             numPeople.hidden = true
             descriptionText.hidden = true
             trailText.hidden = true
+            connected = false
             dispatch_async(dispatch_get_main_queue(), {
-                
-                let version: NSString = UIDevice.currentDevice().systemVersion as NSString
-                if  version.doubleValue >= 8 {
-                    let alert: UIAlertController = UIAlertController(title: "Data currently unavailable.", message: "Check your network connection.", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    
-                } else {
-                    let alert: UIAlertView = UIAlertView()
-                    alert.delegate = self
-                    
-                    alert.title = "Data currently unavailable."
-                    alert.message = "Check your network connection."
-                    alert.addButtonWithTitle("OK")
-                    
-                    alert.show()
-                }
+                self.alert("Data currently unavailable.", message: "Check your network connection.")
             })
             
         }
+    }
+    
+    func alert(title: String, message: String) {
+        if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
+            let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            let alert: UIAlertView = UIAlertView()
+            alert.delegate = self
+            
+            alert.title = title
+            alert.message = message
+            alert.addButtonWithTitle("OK")
+            
+            alert.show()
+        }
+    }
+    
+    
+    // Sharing
+    @IBAction func share() {
+        if connected {
+            if let number: String = numPeople.text {
+                let message: String = "There are currently \(number) people in space!"
+                
+                if let myWebsite = NSURL(string: "http://tinyurl.com/whosinspace/") {
+                    let objectsToShare: [AnyObject] = [message, myWebsite]
+                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                    
+                    self.presentViewController(activityVC, animated: true, completion: nil)
+                }
+            }
+        } else {
+            self.alert("No connection.", message: "Why share what you don't have?")
+        }
+    }
+    
+    func openSettings() {
+        self.performSegueWithIdentifier("openSettings", sender: self)
     }
 }
