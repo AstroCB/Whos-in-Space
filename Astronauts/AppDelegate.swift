@@ -27,12 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound)
         }
         
-        PFPurchase.addObserverForProduct("com.cameronbernhardt.removeAstroAds", block: { (transaction: SKPaymentTransaction!) -> Void in
-            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            
-            defaults.setBool(false, forKey: "astroPro")
-        })
-        
         return true
     }
     

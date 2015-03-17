@@ -31,14 +31,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    @IBAction func removeAds(sender: AnyObject) { // Should auto-restore if already paid for
-        PFPurchase.buyProduct("com.cameronbernhardt.removeAstroAds", block: { (error: NSError?) -> Void in
-            if let anError: NSError = error {
-                self.alert("Error", message: "\(anError.localizedDescription)")
-            }
-        })
-    }
-    
     func alert(title: String, message: String) {
         if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
             let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)

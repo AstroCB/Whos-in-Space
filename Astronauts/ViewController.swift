@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import iAd
 
-class ViewController: UIViewController, ADBannerViewDelegate {
+class ViewController: UIViewController {
     let height: CGFloat = UIScreen.mainScreen().bounds.size.height // Grab screen size
     
     override func viewDidLoad() {
@@ -17,7 +16,7 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Initial load
-        loadData()
+        self.loadData()
         
         let refresh: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "share")
         refresh.tintColor = UIColor.whiteColor()
@@ -27,16 +26,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
         
         let rightButtons: [UIBarButtonItem] = [refresh, gear]
         self.navigationItem.rightBarButtonItems = rightButtons
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        // iAd setup based on IAP
-        if NSUserDefaults.standardUserDefaults().boolForKey("astroPro") {
-            println("No ads")
-            self.canDisplayBannerAds = false
-        } else {
-            self.canDisplayBannerAds = true
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,7 +49,6 @@ class ViewController: UIViewController, ADBannerViewDelegate {
     @IBOutlet weak var numPeople: UILabel!
     @IBOutlet weak var descriptionText: UILabel!
     @IBOutlet weak var trailText: UILabel!
-    @IBOutlet weak var ad: ADBannerView!
     var connected: Bool = false
     
     

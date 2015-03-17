@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D15564D1A6E003100DBF8AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */; };
-		9D15564F1A6E120D00DBF8AA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D15564E1A6E120D00DBF8AA /* StoreKit.framework */; };
+		9D17042C1AB7D7E70006E51D /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */; };
 		9D53EFDC1A6BA9AD00F90C21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFD71A6BA9AD00F90C21 /* Bolts.framework */; };
 		9D53EFDD1A6BA9AE00F90C21 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFD81A6BA9AD00F90C21 /* Parse.framework */; };
 		9D53EFDE1A6BA9AE00F90C21 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFD91A6BA9AD00F90C21 /* ParseCrashReporting.framework */; };
@@ -24,6 +24,7 @@
 		9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */; };
 		9D53EFF41A6BAA4600F90C21 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFF31A6BAA4600F90C21 /* libz.dylib */; };
 		9D53EFF61A6BAA6100F90C21 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFF51A6BAA6100F90C21 /* libsqlite3.dylib */; };
+		9D887E451AB7CAE2003AEE34 /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D887E441AB7CAE2003AEE34 /* TableRowController.swift */; };
 		9DA078321A5659DB001308B9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D38816D1A563FC500A322A5 /* NotificationCenter.framework */; };
 		9DA078371A5659DB001308B9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA078361A5659DB001308B9 /* TodayViewController.swift */; };
 		9DA078391A5659DB001308B9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA078381A5659DB001308B9 /* MainInterface.storyboard */; };
@@ -89,7 +90,7 @@
 
 /* Begin PBXFileReference section */
 		9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9D15564E1A6E120D00DBF8AA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceInterfaceController.swift; sourceTree = "<group>"; };
 		9D38816D1A563FC500A322A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		9D53EFD71A6BA9AD00F90C21 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9D53EFD81A6BA9AD00F90C21 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		9D53EFF31A6BAA4600F90C21 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9D53EFF51A6BAA6100F90C21 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9D53EFF71A6BAA8C00F90C21 /* Astronauts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronauts-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		9D887E441AB7CAE2003AEE34 /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
 		9DA0782C1A565915001308B9 /* Astronauts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Astronauts.entitlements; sourceTree = "<group>"; };
 		9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Astronauts Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA078351A5659DB001308B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 				9D53EFF61A6BAA6100F90C21 /* libsqlite3.dylib in Frameworks */,
 				9D53EFF41A6BAA4600F90C21 /* libz.dylib in Frameworks */,
 				9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */,
-				9D15564F1A6E120D00DBF8AA /* StoreKit.framework in Frameworks */,
 				9D53EFEE1A6BAA2C00F90C21 /* Security.framework in Frameworks */,
 				9D53EFEC1A6BAA2200F90C21 /* QuartzCore.framework in Frameworks */,
 				9D53EFEA1A6BAA1900F90C21 /* MobileCoreServices.framework in Frameworks */,
@@ -183,7 +184,6 @@
 		9D38816C1A563FC500A322A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D15564E1A6E120D00DBF8AA /* StoreKit.framework */,
 				9D53EFF51A6BAA6100F90C21 /* libsqlite3.dylib */,
 				9D53EFF31A6BAA4600F90C21 /* libz.dylib */,
 				9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */,
@@ -233,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				9DAF8B351A40BF4A0058491B /* InterfaceController.swift */,
+				9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */,
+				9D887E441AB7CAE2003AEE34 /* TableRowController.swift */,
 				9DAF8B391A40BF4A0058491B /* Images.xcassets */,
 				9DAF8B331A40BF4A0058491B /* Supporting Files */,
 			);
@@ -450,7 +452,7 @@
 								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -541,6 +543,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DAF8B361A40BF4A0058491B /* InterfaceController.swift in Sources */,
+				9D887E451AB7CAE2003AEE34 /* TableRowController.swift in Sources */,
+				9D17042C1AB7D7E70006E51D /* GlanceInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
