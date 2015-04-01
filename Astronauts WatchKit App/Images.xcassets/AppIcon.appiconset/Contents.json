@@ -112,7 +112,7 @@
       "size" : "27.5x27.5",
       "idiom" : "watch",
       "scale" : "2x",
-      "filename" : "AppleWatchNC55x55.png",
+      "filename" : "WatchAppIcon27.5x27.5@2x.png",
       "role" : "notificationCenter",
       "subtype" : "42mm"
     },
@@ -134,7 +134,7 @@
       "size" : "40x40",
       "idiom" : "watch",
       "scale" : "2x",
-      "filename" : "WatchAppIcon40x40@2x.png",
+      "filename" : "WatchAppIcon40x40@2x-1.png",
       "role" : "appLauncher",
       "subtype" : "38mm"
     },
