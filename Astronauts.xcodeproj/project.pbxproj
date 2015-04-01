@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D044A5E1ACB91FE00428D96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D044A5D1ACB91FE00428D96 /* Images.xcassets */; };
 		9D15564D1A6E003100DBF8AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */; };
 		9D17042C1AB7D7E70006E51D /* GlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */; };
 		9D53EFDC1A6BA9AD00F90C21 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFD71A6BA9AD00F90C21 /* Bolts.framework */; };
@@ -33,7 +34,6 @@
 		9DAF8B3A1A40BF4A0058491B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B391A40BF4A0058491B /* Images.xcassets */; };
 		9DAF8B3E1A40BF4B0058491B /* Astronauts WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */; };
 		9DAF8B451A40BF4B0058491B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B441A40BF4B0058491B /* Interface.storyboard */; };
-		9DAF8B471A40BF4B0058491B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B461A40BF4B0058491B /* Images.xcassets */; };
 		9DAF8B4A1A40BF4B0058491B /* Astronauts WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DD3E7C819764896008DC6D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7C719764896008DC6D6 /* AppDelegate.swift */; };
 		9DD3E7CA19764896008DC6D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7C919764896008DC6D6 /* ViewController.swift */; };
@@ -89,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9D044A5D1ACB91FE00428D96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceInterfaceController.swift; sourceTree = "<group>"; };
 		9D38816D1A563FC500A322A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -121,7 +122,6 @@
 		9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronauts WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF8B431A40BF4B0058491B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DAF8B441A40BF4B0058491B /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
-		9DAF8B461A40BF4B0058491B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9DD3E7C219764896008DC6D6 /* Astronauts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronauts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD3E7C619764896008DC6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD3E7C719764896008DC6D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				9DAF8B441A40BF4B0058491B /* Interface.storyboard */,
-				9DAF8B461A40BF4B0058491B /* Images.xcassets */,
+				9D044A5D1ACB91FE00428D96 /* Images.xcassets */,
 				9DAF8B421A40BF4B0058491B /* Supporting Files */,
 			);
 			path = "Astronauts WatchKit App";
@@ -443,6 +443,7 @@
 					};
 					9DAF8B3C1A40BF4A0058491B = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = VFK9RBFX9F;
 					};
 					9DD3E7C119764896008DC6D6 = {
 						CreatedOnToolsVersion = 6.0;
@@ -507,7 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DAF8B451A40BF4B0058491B /* Interface.storyboard in Resources */,
-				9DAF8B471A40BF4B0058491B /* Images.xcassets in Resources */,
+				9D044A5E1ACB91FE00428D96 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -692,6 +694,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = Astronauts_WatchKit_Extension;
 				INFOPLIST_FILE = "Astronauts WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -816,6 +819,7 @@
 				CODE_SIGN_ENTITLEMENTS = Astronauts/Astronauts.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
