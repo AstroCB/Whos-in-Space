@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Astronauts Glance View.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Astronauts Today Extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Astronauts WatchKit App.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Astronauts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9D38816A1A563FC500A322A5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DA0781A1A56547F001308B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DA078301A5659DB001308B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DAF8B301A40BF4A0058491B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DAF8B3C1A40BF4A0058491B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DD3E7C119764896008DC6D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DD3E7D319764896008DC6D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
