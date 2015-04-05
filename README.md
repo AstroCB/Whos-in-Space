@@ -8,10 +8,10 @@ Who's in Space? is an iPhone application that helps you find out about astronaut
 ## iPhone
 The app is available on iPhone 4s and newer running iOS 7.1 and later.
 
-![Screenshot One](http://i.imgur.com/mC5tzlMm.png)
-![Screenshot Two](http://i.imgur.com/oliAnpvm.png)
-![Screenshot Three](http://i.imgur.com/gbJeQi6m.png)
-![Today Screenshot](http://i.imgur.com/FX1o7Zlm.png)
+[![Screenshot One](http://i.imgur.com/mC5tzlMt.png)](http://i.imgur.com/mC5tzlM.png)
+[![Screenshot Two](http://i.imgur.com/oliAnpvt.png)](http://i.imgur.com/oliAnpv.png)
+[![Screenshot Three](http://i.imgur.com/gbJeQi6t.png)](http://i.imgur.com/gbJeQi6.png)
+[![Today Screenshot](http://i.imgur.com/FX1o7Zlt.png)](http://i.imgur.com/FX1o7Zl.png)
 
 ### Features
  - Names and locations of astronauts
@@ -30,5 +30,4 @@ The [Glance view](https://developer.apple.com/library/ios/documentation/General/
 ### WatchKit App
 The [full WatchKit App](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/CreatingtheUserInterface.html#//apple_ref/doc/uid/TP40014969-CH4-SW1) shows you a quick list of people who are currently in space.
 
-![Full WK App](http://i.imgur.com/ksKrWpN.png)
 ![Full WK App w/ Scroll](http://i.imgur.com/bFqqG04.gif)
