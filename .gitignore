@@ -1,6 +1,6 @@
-# Don't include certificates or signing requests
-/*.p12
-/*.certSigningRequest
+# Don't include push certificates or signing requests
+*.p12
+*.certSigningRequest
 
-# Don't include the Parse library
+# Don't include the Parse library or the required bridging header
 parse-library/
