@@ -1,2 +1,6 @@
+# Don't include certificates or signing requests
 /*.p12
+/*.certSigningRequest
+
+# Don't include the Parse library
 parse-library/
