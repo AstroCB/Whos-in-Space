@@ -123,8 +123,8 @@ class ViewController: UIViewController {
             
             if let value: NSArray = data.valueForKey("people") as? NSArray {
                 for person in value {
-                    let name: String = person["name"] as String // Name of astronaut
-                    let craft: String = person["craft"] as String // Location of astronaut
+                    let name: String = person["name"] as! String // Name of astronaut
+                    let craft: String = person["craft"] as! String // Location of astronaut
                     
                     var encodedURL = ""
                     
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
                     urls.append("http://google.com/search?q=" + encodedURL)
                     
                     // Create a button for each astronaut
-                    let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
+                    let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
                     
                     button.tag = ind
                     button.titleLabel?.font = UIFont(name: "Arial", size: 17)
