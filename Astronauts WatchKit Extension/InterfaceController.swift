@@ -47,7 +47,13 @@ class InterfaceController: WKInterfaceController {
                     
                     self.loadTableData(names)
                 }
-                
+                if let num: Int = JSON["number"]?.integerValue {
+                    // Update defaults
+                    if let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.Astronauts") {
+                        defaults.setInteger(num, forKey: "number")
+                        defaults.synchronize()
+                    }
+                }
             }
         }
     }

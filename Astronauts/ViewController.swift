@@ -119,6 +119,12 @@ class ViewController: UIViewController {
             
             if let num: Int = data.valueForKey("number")?.integerValue {
                 numPeople.text = "\(num)"
+                
+                // Save to defaults
+                if let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.Astronauts") {
+                    defaults.setInteger(num, forKey: "number")
+                    defaults.synchronize()
+                }
             }
             
             if let value: NSArray = data.valueForKey("people") as? NSArray {

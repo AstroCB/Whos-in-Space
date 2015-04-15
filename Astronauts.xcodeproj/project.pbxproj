@@ -93,6 +93,7 @@
 		9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlanceInterfaceController.swift; sourceTree = "<group>"; };
 		9D38816D1A563FC500A322A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		9D3921851ADDD82300100A9C /* Astronauts WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Astronauts WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		9D53EFD71A6BA9AD00F90C21 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9D53EFD81A6BA9AD00F90C21 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9D53EFD91A6BA9AD00F90C21 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		9DAF8B321A40BF4A0058491B /* Astronauts WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9D3921851ADDD82300100A9C /* Astronauts WatchKit Extension.entitlements */,
 				9DAF8B351A40BF4A0058491B /* InterfaceController.swift */,
 				9D17042B1AB7D7E70006E51D /* GlanceInterfaceController.swift */,
 				9D887E441AB7CAE2003AEE34 /* TableRowController.swift */,
@@ -440,6 +442,11 @@
 					9DAF8B301A40BF4A0058491B = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = VFK9RBFX9F;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					9DAF8B3C1A40BF4A0058491B = {
 						CreatedOnToolsVersion = 6.2;
@@ -450,7 +457,7 @@
 						DevelopmentTeam = VFK9RBFX9F;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -642,6 +649,7 @@
 		9DAF8B4B1A40BF4B0058491B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Astronauts WatchKit Extension/Astronauts WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -653,6 +661,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -660,6 +669,7 @@
 		9DAF8B4C1A40BF4B0058491B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Astronauts WatchKit Extension/Astronauts WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -667,6 +677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
