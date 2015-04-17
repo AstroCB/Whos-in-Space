@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0F5E4B58-E522-480B-9C83-32E66B7FA204</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Astronauts</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>784D9E4263CE34E8A871AEBEB4542519B9003F7C</key>
 		<string>https://github.com/AstroCB/Who-s-in-Space-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Astronauts.xcodeproj</string>
+	<string>Astronauts.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>784D9E4263CE34E8A871AEBEB4542519B9003F7C</key>

@@ -52,24 +52,18 @@
                         <group alignment="left" id="c7v-AL-cqM">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="How many people are in space?" numberOfLines="2" id="Syi-v6-EvQ">
-                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                 </label>
                             </items>
                         </group>
-                        <group alignment="left" layout="vertical" id="7Oc-rH-2bj">
+                        <group alignment="left" id="7Oc-rH-2bj">
                             <items>
-                                <label alignment="center" text="0" id="A3h-Pf-JDM"/>
-                                <label alignment="center" verticalAlignment="center" text="Tap to load data" id="ffa-bT-c03"/>
-                                <label alignment="center" verticalAlignment="bottom" text="You haven't loaded it yet." textAlignment="center" numberOfLines="5" id="ZNk-Ur-ZUj">
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                </label>
+                                <label alignment="center" verticalAlignment="center" text="#" id="A3h-Pf-JDM"/>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="infoLabel" destination="ZNk-Ur-ZUj" id="iox-O7-lbw"/>
-                        <outlet property="numberLabel" destination="A3h-Pf-JDM" id="JSZ-tI-b2f"/>
-                        <outlet property="tapLabel" destination="ffa-bT-c03" id="YL4-Ur-Xxd"/>
+                        <outlet property="numberLabel" destination="A3h-Pf-JDM" id="Ixb-wG-6We"/>
                     </connections>
                 </glanceController>
             </objects>
