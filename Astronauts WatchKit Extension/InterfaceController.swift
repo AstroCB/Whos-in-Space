@@ -47,7 +47,6 @@ class InterfaceController: WKInterfaceController {
                     
                     self.loadTableData(names)
                 }
-                
             }
         }
     }

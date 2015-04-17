@@ -2,5 +2,5 @@
 *.p12
 *.certSigningRequest
 
-# Don't include the Parse library or the required bridging header
+# Don't include Parse library
 parse-library/

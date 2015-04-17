@@ -111,11 +111,11 @@ class ViewController: UIViewController {
         }
         
         if let request: NSData = getJSON("http://api.open-notify.org/astros.json") {
-            connected = true
+            self.connected = true
             let data: NSDictionary = parseJSON(request)!
-            numPeople.hidden = false
-            descriptionText.hidden = false
-            trailText.hidden = false
+            self.numPeople.hidden = false
+            self.descriptionText.hidden = false
+            self.trailText.hidden = false
             
             if let num: Int = data.valueForKey("number")?.integerValue {
                 numPeople.text = "\(num)"
