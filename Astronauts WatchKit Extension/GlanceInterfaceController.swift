@@ -13,10 +13,11 @@ import Foundation
 class GlanceInterfaceController: WKInterfaceController {
     
     @IBOutlet var numberLabel: WKInterfaceLabel!
+    @IBOutlet var infoLabel: WKInterfaceLabel!
+    @IBOutlet var tapLabel: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
         // Configure interface objects here.
         self.getData()
     }
@@ -32,17 +33,26 @@ class GlanceInterfaceController: WKInterfaceController {
     }
     
     func getData() {
-        if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
-            var error: NSError?
-            if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-                if let number: Int = JSON.valueForKey("number") as? Int {
-                    let font: UIFont = UIFont.systemFontOfSize(135)
-                    let attrString: NSAttributedString = NSAttributedString(string: "\(number)", attributes: [NSFontAttributeName: font])
-                    self.numberLabel.setAttributedText(attrString)
-                }
-                
+        // Pull from defaults to avoid extraneous network calls
+        if let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.Astronauts") {
+            if let number: Int = defaults.objectForKey("number") as? Int {
+                self.infoLabel.setHidden(true)
+                                self.tapLabel.setHidden(true)
+                let font: UIFont = UIFont.systemFontOfSize(105)
+                let attrString: NSAttributedString = NSAttributedString(string: "\(number)", attributes: [NSFontAttributeName: font])
+                self.numberLabel.setAttributedText(attrString)
+                self.numberLabel.setHidden(false)
+            } else {
+                self.numberLabel.setHidden(true)
+                var font: UIFont = UIFont.systemFontOfSize(15)
+                var attrString: NSAttributedString = NSAttributedString(string: "Tap to open", attributes: [NSFontAttributeName: font])
+                self.tapLabel.setAttributedText(attrString)
+                self.tapLabel.setHidden(false)
+                font = UIFont.systemFontOfSize(10)
+                attrString = NSAttributedString(string: "It looks like you haven't loaded this information yet.", attributes: [NSFontAttributeName: font])
+                self.infoLabel.setAttributedText(attrString)
+                self.infoLabel.setHidden(false)
             }
         }
     }
-    
 }
