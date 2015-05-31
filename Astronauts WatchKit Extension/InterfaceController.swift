@@ -13,11 +13,15 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     
     @IBOutlet var watchTable: WKInterfaceTable!
+    @IBOutlet var numberLabel: WKInterfaceLabel!
+    var personMode: Bool = true
+    var isHidden: Bool = false
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
-        
+        // Add button to change to number mode
+        self.addMenuItemWithItemIcon(.Add, title: "Number", action: "changeMode")
     }
     
     override func willActivate() {
@@ -36,16 +40,26 @@ class InterfaceController: WKInterfaceController {
         if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
             var error: NSError?
             if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-                if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
-                    var names: [String] = [String]()
-                    
-                    for obj in people {
-                        if let name: String = obj["name"] as? String {
-                            names.append(name)
+                if self.personMode {
+                    // Table of astronauts
+                    if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
+                        var names: [String] = [String]()
+                        
+                        for obj in people {
+                            if let name: String = obj["name"] as? String {
+                                names.append(name)
+                            }
                         }
+                        
+                        self.loadTableData(names)
                     }
-                    
-                    self.loadTableData(names)
+                } else {
+                    // Single number
+                    if let number: Int = JSON.valueForKey("number") as? Int {
+                        let font: UIFont = UIFont.systemFontOfSize(25)
+                        let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSFontAttributeName: font])
+                        self.numberLabel.setAttributedText(text)
+                    }
                 }
             }
         }
@@ -61,4 +75,23 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    @IBAction func changeMode() {
+        // Remove old button
+        self.clearAllMenuItems()
+        // Hide/unhide table
+        self.isHidden = !self.isHidden
+        self.watchTable.setHidden(self.isHidden)
+        // Switch mode
+        self.personMode = !self.personMode
+        // Hide/unhide number
+        self.numberLabel.setHidden(!self.isHidden)
+        // Refresh data
+        self.refresh()
+        // Add new button
+        if self.personMode {
+            self.addMenuItemWithItemIcon(.Add, title: "Number", action: "changeMode")
+        } else {
+            self.addMenuItemWithItemIcon(.More, title: "People", action: "changeMode")
+        }
+    }
 }
