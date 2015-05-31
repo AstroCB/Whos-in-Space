@@ -20,7 +20,7 @@ The app is available on iPhone 4s and newer running iOS 7.1 and later.
  - Today extension to find out who's in space at any time
 
 ## Apple Watch
-The next version of Who's in Space?, which is currently pending approval by Apple, will include an Apple Watch extension that provides quick information right on your wrist.
+Who's in Space? also includes an Apple Watch extension that provides quick information right on your wrist.
 
 ### Glance
 The [Glance view](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/ImplementingaGlance.html), which is available from anywhere on the watch with a quick slide up from the bottom of the screen, tells you how many people are in space; a tap on the Glance opens up the full WatchKit app.
