@@ -18,18 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("xiVr6PWo3AA2JQuow7fUe9kI4FdwRoMSlAVNzMno", clientKey:"JLQNuFcQxi2iG5VkwHuJfAxObXmEZckERhIiuWjV")
         
         // Register for Push Notifications
-        if let registration: AnyObject = NSClassFromString("UIUserNotificationSettings") { // iOS 8+
-            let notificationTypes: UIUserNotificationType = (.Alert | .Badge | .Sound)
-            let notificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-            
-            application.registerUserNotificationSettings(notificationSettings)
-        } else { // iOS 7
-            application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound)
+        if let _: AnyObject = NSClassFromString("UIUserNotificationSettings") { // iOS 8+
+            if #available(iOS 8.0, *) {
+                let notificationTypes: UIUserNotificationType = ([.Alert, .Badge, .Sound])
+                let notificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+                application.registerUserNotificationSettings(notificationSettings)
+            } else {
+                // Fallback on earlier versions
+                application.registerForRemoteNotificationTypes([.Alert, .Badge, .Sound])
+            }
         }
         
         return true
     }
     
+    @available(iOS 8.0, *)
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         application.registerForRemoteNotifications()
     }
@@ -42,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         // Registration failed (probably because you can't use push in Simulator)
-        println(error.localizedDescription)
+        print(error.localizedDescription)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {

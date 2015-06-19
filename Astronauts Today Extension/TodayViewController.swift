@@ -28,9 +28,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         if let req = data {
             var parsedData: NSDictionary?
-            var error: NSError?
-            if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(req, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-                parsedData = JSON
+            do {
+                if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(req, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                    parsedData = JSON
+                }
+            } catch {
+                print(error)
             }
             
             if let newData: NSDictionary = parsedData {
@@ -47,7 +50,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             return UIEdgeInsetsZero
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
         // If an error is encountered, use NCUpdateResult.Failed

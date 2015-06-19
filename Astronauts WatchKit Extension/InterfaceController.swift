@@ -38,8 +38,8 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func refresh() {
         if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
-            var error: NSError?
-            if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
+            do {
+            if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
                 if self.personMode {
                     // Table of astronauts
                     if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
@@ -62,13 +62,16 @@ class InterfaceController: WKInterfaceController {
                     }
                 }
             }
+            } catch {
+                print(error)
+            }
         }
     }
     
     func loadTableData(data: [String]) {
         self.watchTable.setNumberOfRows(data.count, withRowType: "PersonRow")
         
-        for (index, name) in enumerate(data) {
+        for (index, name) in data.enumerate() {
             if let row: TableRowController = watchTable.rowControllerAtIndex(index) as? TableRowController {
                 row.personLabel.setText(name)
             }

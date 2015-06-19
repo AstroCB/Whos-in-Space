@@ -38,9 +38,12 @@ class ViewController: UIViewController {
     }
     
     func parseJSON(inputData: NSData) -> NSDictionary? {
-        var error: NSError?
-        if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-            return JSON
+        do {
+            if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                return JSON
+            }
+        } catch {
+            print(error)
         }
         
         return nil
@@ -85,7 +88,6 @@ class ViewController: UIViewController {
     }
     
     func loadData(){
-        var dist: CGFloat = 0
         // Multipliers for constraint positioning later
         var constMultiplier: CGFloat = 1
         var topConst: CGFloat = 1.1
@@ -93,20 +95,15 @@ class ViewController: UIViewController {
         // Fiddle with positioning based on device size; this is bad style, but I don't know a better way
         switch height {
         case 480: // 4s
-            dist = 25
             constMultiplier = 1.03
             topConst = 1.05
         case 568: // 5/s
-            dist = 30
             constMultiplier = 1.05
         case 667: // 6
-            dist = 50
             constMultiplier = 1.08
         case 736: // 6 Plus
-            dist = 70
             constMultiplier = 1.1
         default: // ??
-            dist = 30
             constMultiplier = 1.05
         }
         
@@ -119,12 +116,6 @@ class ViewController: UIViewController {
             
             if let num: Int = data.valueForKey("number")?.integerValue {
                 numPeople.text = "\(num)"
-                
-                // Save to defaults
-                if let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.Astronauts") {
-                    defaults.setInteger(num, forKey: "number")
-                    defaults.synchronize()
-                }
             }
             
             if let value: NSArray = data.valueForKey("people") as? NSArray {
@@ -134,7 +125,7 @@ class ViewController: UIViewController {
                     
                     var encodedURL = ""
                     
-                    for j in name {
+                    for j in name.characters {
                         if j == " " {
                             encodedURL = encodedURL + "+"
                         } else {
@@ -145,7 +136,7 @@ class ViewController: UIViewController {
                     urls.append("http://google.com/search?q=" + encodedURL)
                     
                     // Create a button for each astronaut
-                    let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+                    let button: UIButton = UIButton(type: .System)
                     
                     button.tag = ind
                     button.titleLabel?.font = UIFont(name: "Arial", size: 17)
@@ -158,7 +149,7 @@ class ViewController: UIViewController {
                     self.view.addSubview(button)
                     
                     // Positioning and constraints for buttons
-                    button.setTranslatesAutoresizingMaskIntoConstraints(false)
+                    button.translatesAutoresizingMaskIntoConstraints = false
                     
                     let constX = NSLayoutConstraint(item: button, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
                     self.view.addConstraint(constX)
@@ -188,11 +179,12 @@ class ViewController: UIViewController {
     }
     
     func alert(title: String, message: String) {
-        if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
+        if #available(iOS 8.0, *) {
             let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         } else {
+            // Fallback on earlier versions
             let alert: UIAlertView = UIAlertView()
             alert.delegate = self
             
@@ -201,6 +193,7 @@ class ViewController: UIViewController {
             alert.addButtonWithTitle("OK")
             
             alert.show()
+            
         }
     }
     
