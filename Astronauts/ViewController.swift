@@ -107,7 +107,7 @@ class ViewController: UIViewController {
             constMultiplier = 1.05
         }
         
-        if let request: NSData = getJSON("http://api.open-notify.org/astros.json") {
+        if let request: NSData = getJSON("http://whateverorigin.org/get?url=http%3A%2F%2Fapi.open-notify.org%2Fastros.json") {
             self.connected = true
             let data: NSDictionary = parseJSON(request)!
             self.numPeople.hidden = false

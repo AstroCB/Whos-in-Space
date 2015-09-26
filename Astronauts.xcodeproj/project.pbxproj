@@ -18,8 +18,6 @@
 		9D53EFEC1A6BAA2200F90C21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFEB1A6BAA2200F90C21 /* QuartzCore.framework */; };
 		9D53EFEE1A6BAA2C00F90C21 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFED1A6BAA2C00F90C21 /* Security.framework */; };
 		9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */; };
-		9D73F4AA1B34B6D6007922E2 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D73F4A81B34B69D007922E2 /* libz.1.dylib */; };
-		9D73F4B71B34B9AA007922E2 /* parse-library in Resources */ = {isa = PBXBuildFile; fileRef = 9D73F4B61B34B9AA007922E2 /* parse-library */; };
 		9D73F4B91B34BC5A007922E2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D73F4AB1B34B6EC007922E2 /* libsqlite3.dylib */; };
 		9D887E451AB7CAE2003AEE34 /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D887E441AB7CAE2003AEE34 /* TableRowController.swift */; };
 		9DA078321A5659DB001308B9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D38816D1A563FC500A322A5 /* NotificationCenter.framework */; };
@@ -34,6 +32,13 @@
 		9DD3E7CD19764896008DC6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD3E7CB19764896008DC6D6 /* Main.storyboard */; };
 		9DD3E7CF19764896008DC6D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD3E7CE19764896008DC6D6 /* Images.xcassets */; };
 		9DD3E7DB19764896008DC6D6 /* AstronautsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7DA19764896008DC6D6 /* AstronautsTests.swift */; };
+		9DD924481B54F72F0048AB74 /* parse-library in Resources */ = {isa = PBXBuildFile; fileRef = 9DD924471B54F72F0048AB74 /* parse-library */; };
+		9DD9244A1B54F8120048AB74 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD924491B54F8120048AB74 /* StoreKit.framework */; };
+		9DE44B291B54F9B200BCEBE6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE44B241B54F9B200BCEBE6 /* Bolts.framework */; };
+		9DE44B2A1B54F9B200BCEBE6 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE44B251B54F9B200BCEBE6 /* Parse.framework */; };
+		9DE44B2B1B54F9B200BCEBE6 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE44B261B54F9B200BCEBE6 /* ParseCrashReporting.framework */; };
+		9DE44B2C1B54F9B200BCEBE6 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE44B271B54F9B200BCEBE6 /* ParseFacebookUtils.framework */; };
+		9DE44B2D1B54F9B200BCEBE6 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE44B281B54F9B200BCEBE6 /* ParseUI.framework */; };
 		9DFC15691B2B31A80035B8ED /* Astronauts WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9DFC156C1B2B31A80035B8ED /* Astronauts WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */; };
 /* End PBXBuildFile section */
@@ -121,8 +126,6 @@
 		9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9D73F4A81B34B69D007922E2 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		9D73F4AB1B34B6EC007922E2 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
-		9D73F4B31B34B952007922E2 /* Astronauts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Astronauts-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		9D73F4B61B34B9AA007922E2 /* parse-library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library"; sourceTree = "<group>"; };
 		9D887E441AB7CAE2003AEE34 /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
 		9DA0782C1A565915001308B9 /* Astronauts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Astronauts.entitlements; sourceTree = "<group>"; };
 		9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Astronauts Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +148,13 @@
 		9DD3E7D419764896008DC6D6 /* AstronautsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstronautsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD3E7D919764896008DC6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD3E7DA19764896008DC6D6 /* AstronautsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsTests.swift; sourceTree = "<group>"; };
+		9DD924471B54F72F0048AB74 /* parse-library */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "parse-library"; sourceTree = "<group>"; };
+		9DD924491B54F8120048AB74 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9DE44B241B54F9B200BCEBE6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library/Bolts.framework"; sourceTree = "<group>"; };
+		9DE44B251B54F9B200BCEBE6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library/Parse.framework"; sourceTree = "<group>"; };
+		9DE44B261B54F9B200BCEBE6 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library/ParseCrashReporting.framework"; sourceTree = "<group>"; };
+		9DE44B271B54F9B200BCEBE6 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		9DE44B281B54F9B200BCEBE6 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "parse-library/ParseUI.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +177,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE44B291B54F9B200BCEBE6 /* Bolts.framework in Frameworks */,
+				9DE44B2A1B54F9B200BCEBE6 /* Parse.framework in Frameworks */,
+				9DE44B2B1B54F9B200BCEBE6 /* ParseCrashReporting.framework in Frameworks */,
+				9DE44B2C1B54F9B200BCEBE6 /* ParseFacebookUtils.framework in Frameworks */,
+				9DE44B2D1B54F9B200BCEBE6 /* ParseUI.framework in Frameworks */,
 				9D73F4B91B34BC5A007922E2 /* libsqlite3.dylib in Frameworks */,
-				9D73F4AA1B34B6D6007922E2 /* libz.1.dylib in Frameworks */,
 				9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */,
+				9DD9244A1B54F8120048AB74 /* StoreKit.framework in Frameworks */,
 				9D53EFEE1A6BAA2C00F90C21 /* Security.framework in Frameworks */,
 				9D53EFEC1A6BAA2200F90C21 /* QuartzCore.framework in Frameworks */,
 				9D53EFEA1A6BAA1900F90C21 /* MobileCoreServices.framework in Frameworks */,
@@ -193,6 +208,12 @@
 		9D38816C1A563FC500A322A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9DE44B241B54F9B200BCEBE6 /* Bolts.framework */,
+				9DE44B251B54F9B200BCEBE6 /* Parse.framework */,
+				9DE44B261B54F9B200BCEBE6 /* ParseCrashReporting.framework */,
+				9DE44B271B54F9B200BCEBE6 /* ParseFacebookUtils.framework */,
+				9DE44B281B54F9B200BCEBE6 /* ParseUI.framework */,
+				9DD924491B54F8120048AB74 /* StoreKit.framework */,
 				9D73F4AB1B34B6EC007922E2 /* libsqlite3.dylib */,
 				9D73F4A81B34B69D007922E2 /* libz.1.dylib */,
 				9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */,
@@ -268,7 +289,6 @@
 		9DD3E7B919764896008DC6D6 = {
 			isa = PBXGroup;
 			children = (
-				9D73F4B61B34B9AA007922E2 /* parse-library */,
 				9DD3E7C419764896008DC6D6 /* Astronauts */,
 				9DD3E7D719764896008DC6D6 /* AstronautsTests */,
 				9DAF8B321A40BF4A0058491B /* Astronauts WatchKit Extension */,
@@ -276,6 +296,7 @@
 				9DA078331A5659DB001308B9 /* Astronauts Today Extension */,
 				9D38816C1A563FC500A322A5 /* Frameworks */,
 				9DD3E7C319764896008DC6D6 /* Products */,
+				9DD924471B54F72F0048AB74 /* parse-library */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,7 +320,6 @@
 				9DD3E7C919764896008DC6D6 /* ViewController.swift */,
 				9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */,
 				9DD3E7CB19764896008DC6D6 /* Main.storyboard */,
-				9D73F4B31B34B952007922E2 /* Astronauts-Bridging-Header.h */,
 				9DD3E7CE19764896008DC6D6 /* Images.xcassets */,
 				9DD3E7C519764896008DC6D6 /* Supporting Files */,
 			);
@@ -522,7 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD3E7CD19764896008DC6D6 /* Main.storyboard in Resources */,
-				9D73F4B71B34B9AA007922E2 /* parse-library in Resources */,
+				9DD924481B54F72F0048AB74 /* parse-library in Resources */,
 				9DD3E7CF19764896008DC6D6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,17 +846,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library";
 				INFOPLIST_FILE = Astronauts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronauts-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -853,17 +870,14 @@
 				COPY_PHASE_STRIP = NO;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/parse-library",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/parse-library";
 				INFOPLIST_FILE = Astronauts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Astronauts-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
