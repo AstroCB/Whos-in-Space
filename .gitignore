@@ -4,3 +4,5 @@
 
 # Don't include Parse library
 parse-library/
+ParseData/
+Parse.framework/
