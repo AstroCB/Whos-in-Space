@@ -1,7 +1,7 @@
 # Who's in Space?
 Who's in Space? is an iPhone application that helps you find out about astronauts and where they are in space.
 
-[Website](http://tinyurl.com/whosinspace)
+[Website](https://cameronbernhardt.com/projects/whos-in-space/)
 
 [![Available on the App Store](https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg)](https://itunes.apple.com/us/app/whos-in-space/id916499517)
 

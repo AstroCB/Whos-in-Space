@@ -38,29 +38,32 @@ class InterfaceController: WKInterfaceController {
     
     @IBAction func refresh() {
         if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
-            var error: NSError?
-            if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-                if self.personMode {
-                    // Table of astronauts
-                    if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
-                        var names: [String] = [String]()
-                        
-                        for obj in people {
-                            if let name: String = obj["name"] as? String {
-                                names.append(name)
+            do {
+                if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                    if self.personMode {
+                        // Table of astronauts
+                        if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
+                            var names: [String] = [String]()
+                            
+                            for obj in people {
+                                if let name: String = obj["name"] as? String {
+                                    names.append(name)
+                                }
                             }
+                            
+                            self.loadTableData(names)
                         }
-                        
-                        self.loadTableData(names)
-                    }
-                } else {
-                    // Single number
-                    if let number: Int = JSON.valueForKey("number") as? Int {
-                        let font: UIFont = UIFont.systemFontOfSize(25)
-                        let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSFontAttributeName: font])
-                        self.numberLabel.setAttributedText(text)
+                    } else {
+                        // Single number
+                        if let number: Int = JSON.valueForKey("number") as? Int {
+                            let font: UIFont = UIFont.systemFontOfSize(25)
+                            let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSFontAttributeName: font])
+                            self.numberLabel.setAttributedText(text)
+                        }
                     }
                 }
+            } catch _ {
+                print("Error")
             }
         }
     }
@@ -68,7 +71,7 @@ class InterfaceController: WKInterfaceController {
     func loadTableData(data: [String]) {
         self.watchTable.setNumberOfRows(data.count, withRowType: "PersonRow")
         
-        for (index, name) in enumerate(data) {
+        for (index, name) in data.enumerate() {
             if let row: TableRowController = watchTable.rowControllerAtIndex(index) as? TableRowController {
                 row.personLabel.setText(name)
             }

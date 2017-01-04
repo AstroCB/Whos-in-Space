@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,38 +17,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        Parse.setApplicationId("xiVr6PWo3AA2JQuow7fUe9kI4FdwRoMSlAVNzMno", clientKey:"JLQNuFcQxi2iG5VkwHuJfAxObXmEZckERhIiuWjV")
+        Parse.setApplicationId("xiVr6PWo3AA2JQuow7fUe9kI4FdwRoMSlAVNzMno", clientKey: "JLQNuFcQxi2iG5VkwHuJfAxObXmEZckERhIiuWjV")
         
         // Register for Push Notifications
-        if let registration: AnyObject = NSClassFromString("UIUserNotificationSettings") { // iOS 8+
-            let notificationTypes: UIUserNotificationType = (.Alert | .Badge | .Sound)
+        
+        if #available(iOS 8.0, *) {
+            let notificationTypes: UIUserNotificationType = ([.Alert, .Badge, .Sound])
             let notificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
             
             application.registerUserNotificationSettings(notificationSettings)
-        } else { // iOS 7
-            application.registerForRemoteNotificationTypes(.Alert | .Badge | .Sound)
+        } else {
+            // Fallback on earlier versions
+            application.registerForRemoteNotificationTypes([.Alert, .Badge, .Sound])
         }
-        
         return true
     }
     
-    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        application.registerForRemoteNotifications()
-    }
-    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
-        currentInstallation.setDeviceTokenFromData(deviceToken)
-        currentInstallation.saveInBackground()
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        // Registration failed (probably because you can't use push in Simulator)
-        println(error.localizedDescription)
+        if error.code == 3010 {
+            print("Push notifications are not supported in the iOS Simulator.")
+        } else {
+            print("Error: \(error.localizedDescription)")
+        }
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
+        if application.applicationState == UIApplicationState.Inactive {
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayload(userInfo)
+        }
+    }
+    
+    @available(iOS 9.0, *)
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        let alert: UIAlertController = UIAlertController(title: "Hello, there!", message: "You've used a Force Touch shortcut!", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        if let win: UIViewController = self.window?.rootViewController {
+            win.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {

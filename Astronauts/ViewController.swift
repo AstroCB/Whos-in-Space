@@ -38,9 +38,12 @@ class ViewController: UIViewController {
     }
     
     func parseJSON(inputData: NSData) -> NSDictionary? {
-        var error: NSError?
-        if let JSON: NSDictionary = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary {
-            return JSON
+        do {
+            if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                return JSON
+            }
+        } catch _ {
+            print("Error")
         }
         
         return nil
@@ -85,7 +88,6 @@ class ViewController: UIViewController {
     }
     
     func loadData(){
-        var dist: CGFloat = 0
         // Multipliers for constraint positioning later
         var constMultiplier: CGFloat = 1
         var topConst: CGFloat = 1.1
@@ -93,20 +95,15 @@ class ViewController: UIViewController {
         // Fiddle with positioning based on device size; this is bad style, but I don't know a better way
         switch height {
         case 480: // 4s
-            dist = 25
             constMultiplier = 1.03
             topConst = 1.05
         case 568: // 5/s
-            dist = 30
             constMultiplier = 1.05
         case 667: // 6
-            dist = 50
             constMultiplier = 1.08
         case 736: // 6 Plus
-            dist = 70
             constMultiplier = 1.1
         default: // ??
-            dist = 30
             constMultiplier = 1.05
         }
         
@@ -134,7 +131,7 @@ class ViewController: UIViewController {
                     
                     var encodedURL = ""
                     
-                    for j in name {
+                    for j in name.characters {
                         if j == " " {
                             encodedURL = encodedURL + "+"
                         } else {
@@ -145,7 +142,7 @@ class ViewController: UIViewController {
                     urls.append("http://google.com/search?q=" + encodedURL)
                     
                     // Create a button for each astronaut
-                    let button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
+                    let button = UIButton(type: UIButtonType.System)
                     
                     button.tag = ind
                     button.titleLabel?.font = UIFont(name: "Arial", size: 17)
@@ -158,7 +155,7 @@ class ViewController: UIViewController {
                     self.view.addSubview(button)
                     
                     // Positioning and constraints for buttons
-                    button.setTranslatesAutoresizingMaskIntoConstraints(false)
+                    button.translatesAutoresizingMaskIntoConstraints = false
                     
                     let constX = NSLayoutConstraint(item: button, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
                     self.view.addConstraint(constX)
@@ -181,29 +178,11 @@ class ViewController: UIViewController {
             trailText.hidden = true
             connected = false
             dispatch_async(dispatch_get_main_queue(), {
-                self.alert("Data currently unavailable.", message: "Check your network connection.")
+                alert("Data currently unavailable.", message: "Check your network connection.", controller: self)
             })
             
         }
     }
-    
-    func alert(title: String, message: String) {
-        if let gotModernAlert: AnyClass = NSClassFromString("UIAlertController") {
-            let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            let alert: UIAlertView = UIAlertView()
-            alert.delegate = self
-            
-            alert.title = title
-            alert.message = message
-            alert.addButtonWithTitle("OK")
-            
-            alert.show()
-        }
-    }
-    
     
     // Sharing
     @IBAction func share() {
@@ -219,11 +198,28 @@ class ViewController: UIViewController {
                 }
             }
         } else {
-            self.alert("No connection.", message: "Why share what you don't have?")
+            alert("No connection.", message: "Why share what you don't have?", controller: self)
         }
     }
     
     func openSettings() {
         self.performSegueWithIdentifier("openSettings", sender: self)
+    }
+}
+
+public func alert(title: String, message: String, controller: UIViewController) {
+    if #available(iOS 8.0, *) { // UIAlertController is available
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        controller.presentViewController(alert, animated: true, completion: nil)
+    } else { // Not available; use UIAlertView
+        let alert: UIAlertView = UIAlertView()
+        alert.delegate = controller
+        
+        alert.title = title
+        alert.message = message
+        alert.addButtonWithTitle("OK")
+        
+        alert.show()
     }
 }
