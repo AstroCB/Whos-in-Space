@@ -1,7 +1,6 @@
 # Don't include push certificates or signing requests
 *.p12
 *.certSigningRequest
-
 # Don't include Parse library
 parse-library/
 ParseData/
