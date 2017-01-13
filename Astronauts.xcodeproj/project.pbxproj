@@ -25,7 +25,6 @@
 		9DA078371A5659DB001308B9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA078361A5659DB001308B9 /* TodayViewController.swift */; };
 		9DA078391A5659DB001308B9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA078381A5659DB001308B9 /* MainInterface.storyboard */; };
 		9DA0783C1A5659DB001308B9 /* Astronauts Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9DAE229C1BB9CE6500BB26D7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DAE229A1BB9CE6500BB26D7 /* Parse.framework */; };
 		9DAF8B361A40BF4A0058491B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF8B351A40BF4A0058491B /* InterfaceController.swift */; };
 		9DAF8B3A1A40BF4A0058491B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B391A40BF4A0058491B /* Images.xcassets */; };
 		9DAF8B451A40BF4B0058491B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B441A40BF4B0058491B /* Interface.storyboard */; };
@@ -123,7 +122,6 @@
 		9DA078351A5659DB001308B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA078361A5659DB001308B9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		9DA078381A5659DB001308B9 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		9DAE229A1BB9CE6500BB26D7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Astronauts WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF8B341A40BF4A0058491B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DAF8B351A40BF4A0058491B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				9D53EFE81A6BAA0F00F90C21 /* CoreLocation.framework in Frameworks */,
 				9D53EFE61A6BAA0000F90C21 /* CoreGraphics.framework in Frameworks */,
 				9D53EFE41A6BA9F000F90C21 /* CFNetwork.framework in Frameworks */,
-				9DAE229C1BB9CE6500BB26D7 /* Parse.framework in Frameworks */,
 				9D53EFE21A6BA9E100F90C21 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,7 +184,6 @@
 		9D38816C1A563FC500A322A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9DAE229A1BB9CE6500BB26D7 /* Parse.framework */,
 				9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */,
 				9D53EFED1A6BAA2C00F90C21 /* Security.framework */,
 				9D53EFEB1A6BAA2200F90C21 /* QuartzCore.framework */,
@@ -429,10 +425,12 @@
 					9DA078301A5659DB001308B9 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = VFK9RBFX9F;
+						LastSwiftMigration = 0820;
 					};
 					9DAF8B301A40BF4A0058491B = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = VFK9RBFX9F;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -442,21 +440,30 @@
 					9DAF8B3C1A40BF4A0058491B = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = VFK9RBFX9F;
+						LastSwiftMigration = 0820;
 					};
 					9DD3E7C119764896008DC6D6 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = VFK9RBFX9F;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					9DD3E7D319764896008DC6D6 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0820;
 						TestTargetID = 9DD3E7C119764896008DC6D6;
 					};
 				};
@@ -618,6 +625,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.Astronauts.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -635,6 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.Astronauts.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -657,6 +666,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -677,6 +687,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -699,6 +710,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -717,6 +729,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -833,6 +846,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -858,6 +872,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -874,6 +889,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -887,6 +903,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;

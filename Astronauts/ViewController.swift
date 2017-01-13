@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let height: CGFloat = UIScreen.mainScreen().bounds.size.height // Grab screen size
+    let height: CGFloat = UIScreen.main.bounds.size.height // Grab screen size
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         // Initial load
         self.loadData()
         
-        let refresh: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "share")
-        refresh.tintColor = UIColor.whiteColor()
+        let refresh: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(ViewController.share))
+        refresh.tintColor = UIColor.white
         
-        let gear: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Gear"), style: UIBarButtonItemStyle.Bordered, target: self, action: "openSettings")
-        gear.tintColor = UIColor.whiteColor()
+        let gear: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Gear"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(ViewController.openSettings))
+        gear.tintColor = UIColor.white
         
         let rightButtons: [UIBarButtonItem] = [refresh, gear]
         self.navigationItem.rightBarButtonItems = rightButtons
@@ -33,13 +33,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func getJSON(urlToRequest: String) -> NSData? {
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)
+    func getJSON(_ urlToRequest: String) -> Data? {
+        return (try? Data(contentsOf: URL(string: urlToRequest)!))
     }
     
-    func parseJSON(inputData: NSData) -> NSDictionary? {
+    func parseJSON(_ inputData: Data) -> NSDictionary? {
         do {
-            if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+            if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: inputData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                 return JSON
             }
         } catch _ {
@@ -60,8 +60,8 @@ class ViewController: UIViewController {
     var buttons: [UIButton] = []
     
     @IBAction func reload() {
-        numPeople.hidden = true
-        descriptionText.hidden = true
+        numPeople.isHidden = true
+        descriptionText.isHidden = true
         
         for i in buttons { // Remove all of the buttons
             i.removeFromSuperview()
@@ -74,14 +74,14 @@ class ViewController: UIViewController {
         loadData()
     }
     
-    func labelTapped(sender: UIButton!) { // Handles button clicks
+    func labelTapped(_ sender: UIButton!) { // Handles button clicks
         let urlIndex = sender.tag
         self.openUrl(urls[urlIndex])
     }
     
-    func openUrl(url: String!) { // Opens URLs
-        let targetURL = NSURL(string: url)!
-        let application = UIApplication.sharedApplication()
+    func openUrl(_ url: String!) { // Opens URLs
+        let targetURL = URL(string: url)!
+        let application = UIApplication.shared
         
         application.openURL(targetURL)
         
@@ -107,24 +107,24 @@ class ViewController: UIViewController {
             constMultiplier = 1.05
         }
         
-        if let request: NSData = getJSON("http://api.open-notify.org/astros.json") {
+        if let request: Data = getJSON("http://api.open-notify.org/astros.json") {
             self.connected = true
             let data: NSDictionary = parseJSON(request)!
-            self.numPeople.hidden = false
-            self.descriptionText.hidden = false
-            self.trailText.hidden = false
+            self.numPeople.isHidden = false
+            self.descriptionText.isHidden = false
+            self.trailText.isHidden = false
             
-            if let num: Int = data.valueForKey("number")?.integerValue {
+            if let num: Int = (data.value(forKey: "number") as AnyObject).intValue {
                 numPeople.text = "\(num)"
                 
                 // Save to defaults
-                if let defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.Astronauts") {
-                    defaults.setInteger(num, forKey: "number")
+                if let defaults: UserDefaults = UserDefaults(suiteName: "group.Astronauts") {
+                    defaults.set(num, forKey: "number")
                     defaults.synchronize()
                 }
             }
             
-            if let value: NSArray = data.valueForKey("people") as? NSArray {
+            if let value: [NSDictionary] = data.value(forKey: "people") as? [NSDictionary] {
                 for person in value {
                     let name: String = person["name"] as! String // Name of astronaut
                     let craft: String = person["craft"] as! String // Location of astronaut
@@ -139,16 +139,16 @@ class ViewController: UIViewController {
                         }
                     }
                     
-                    urls.append("http://google.com/search?q=" + encodedURL)
+                    urls.append("https://google.com/search?q=" + encodedURL)
                     
                     // Create a button for each astronaut
-                    let button = UIButton(type: UIButtonType.System)
+                    let button = UIButton(type: UIButtonType.system)
                     
                     button.tag = ind
                     button.titleLabel?.font = UIFont(name: "Arial", size: 17)
-                    button.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
-                    button.setTitle("\(name): \(craft)", forState: UIControlState.Normal)
-                    button.addTarget(self, action: "labelTapped:", forControlEvents: UIControlEvents.TouchUpInside)
+                    button.setTitleColor(UIColor.white, for:UIControlState())
+                    button.setTitle("\(name): \(craft)", for: UIControlState())
+                    button.addTarget(self, action: #selector(ViewController.labelTapped(_:)), for: UIControlEvents.touchUpInside)
                     
                     buttons.append(button)
                     
@@ -157,27 +157,27 @@ class ViewController: UIViewController {
                     // Positioning and constraints for buttons
                     button.translatesAutoresizingMaskIntoConstraints = false
                     
-                    let constX = NSLayoutConstraint(item: button, attribute: .CenterX, relatedBy: .Equal, toItem: self.view, attribute: .CenterX, multiplier: 1, constant: 0)
+                    let constX = NSLayoutConstraint(item: button, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0)
                     self.view.addConstraint(constX)
                     
                     if ind == 0 {
-                        let constY = NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: self.trailText, attribute: .CenterY, multiplier: topConst, constant: 0)
+                        let constY = NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: self.trailText, attribute: .centerY, multiplier: topConst, constant: 0)
                         self.view.addConstraint(constY)
                     } else {
                         let lastButton: UIButton = self.buttons[ind - 1]
-                        let constY = NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: lastButton, attribute: .CenterY, multiplier: constMultiplier, constant: 0)
+                        let constY = NSLayoutConstraint(item: button, attribute: .top, relatedBy: .equal, toItem: lastButton, attribute: .centerY, multiplier: constMultiplier, constant: 0)
                         self.view.addConstraint(constY)
                     }
                     
-                    ind++
+                    ind += 1
                 }
             }
         } else { // No connection...or the API has been taken down, which would be bad (and possibly my fault)
-            numPeople.hidden = true
-            descriptionText.hidden = true
-            trailText.hidden = true
+            numPeople.isHidden = true
+            descriptionText.isHidden = true
+            trailText.isHidden = true
             connected = false
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 alert("Data currently unavailable.", message: "Check your network connection.", controller: self)
             })
             
@@ -190,11 +190,11 @@ class ViewController: UIViewController {
             if let number: String = numPeople.text {
                 let message: String = "There are currently \(number) people in space!"
                 
-                if let myWebsite = NSURL(string: "http://tinyurl.com/whosinspace/") {
-                    let objectsToShare: [AnyObject] = [message, myWebsite]
+                if let myWebsite = URL(string: "https://cameronbernhardt.com/projects/whos-in-space/") {
+                    let objectsToShare: [AnyObject] = [message as AnyObject, myWebsite as AnyObject]
                     let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
                     
-                    self.presentViewController(activityVC, animated: true, completion: nil)
+                    self.present(activityVC, animated: true, completion: nil)
                 }
             }
         } else {
@@ -203,22 +203,22 @@ class ViewController: UIViewController {
     }
     
     func openSettings() {
-        self.performSegueWithIdentifier("openSettings", sender: self)
+        self.performSegue(withIdentifier: "openSettings", sender: self)
     }
 }
 
-public func alert(title: String, message: String, controller: UIViewController) {
+public func alert(_ title: String, message: String, controller: UIViewController) {
     if #available(iOS 8.0, *) { // UIAlertController is available
-        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        controller.presentViewController(alert, animated: true, completion: nil)
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        controller.present(alert, animated: true, completion: nil)
     } else { // Not available; use UIAlertView
         let alert: UIAlertView = UIAlertView()
         alert.delegate = controller
         
         alert.title = title
         alert.message = message
-        alert.addButtonWithTitle("OK")
+        alert.addButton(withTitle: "OK")
         
         alert.show()
     }

@@ -14,8 +14,8 @@ class GlanceInterfaceController: WKInterfaceController {
     
     @IBOutlet var numberLabel: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         
         // Configure interface objects here.
         self.getData()
@@ -32,11 +32,11 @@ class GlanceInterfaceController: WKInterfaceController {
     }
     
     func getData() {
-        if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
+        if let request: Data = try? Data(contentsOf: URL(string: "http://api.open-notify.org/astros.json")!) {
             do {
-            if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
-                if let number: Int = JSON.valueForKey("number") as? Int {
-                    let font: UIFont = UIFont.systemFontOfSize(135)
+            if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: request, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+                if let number: Int = JSON.value(forKey: "number") as? Int {
+                    let font: UIFont = UIFont.systemFont(ofSize: 135)
                     let attrString: NSAttributedString = NSAttributedString(string: "\(number)", attributes: [NSFontAttributeName: font])
                     self.numberLabel.setAttributedText(attrString)
                 }

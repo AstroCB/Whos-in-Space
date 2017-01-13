@@ -17,11 +17,11 @@ class InterfaceController: WKInterfaceController {
     var personMode: Bool = true
     var isHidden: Bool = false
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         // Configure interface objects here.
         // Add button to change to number mode
-        self.addMenuItemWithItemIcon(.Add, title: "Number", action: "changeMode")
+        self.addMenuItem(with: .add, title: "Number", action: #selector(InterfaceController.changeMode))
     }
     
     override func willActivate() {
@@ -37,12 +37,12 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func refresh() {
-        if let request: NSData = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!) {
+        if let request: Data = try? Data(contentsOf: URL(string: "http://api.open-notify.org/astros.json")!) {
             do {
-                if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(request, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: request, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                     if self.personMode {
                         // Table of astronauts
-                        if let people: [[String: AnyObject]] = JSON.valueForKey("people") as? [[String: AnyObject]] {
+                        if let people: [[String: AnyObject]] = JSON.value(forKey: "people") as? [[String: AnyObject]] {
                             var names: [String] = [String]()
                             
                             for obj in people {
@@ -55,8 +55,8 @@ class InterfaceController: WKInterfaceController {
                         }
                     } else {
                         // Single number
-                        if let number: Int = JSON.valueForKey("number") as? Int {
-                            let font: UIFont = UIFont.systemFontOfSize(25)
+                        if let number: Int = JSON.value(forKey: "number") as? Int {
+                            let font: UIFont = UIFont.systemFont(ofSize: 25)
                             let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSFontAttributeName: font])
                             self.numberLabel.setAttributedText(text)
                         }
@@ -68,11 +68,11 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func loadTableData(data: [String]) {
+    func loadTableData(_ data: [String]) {
         self.watchTable.setNumberOfRows(data.count, withRowType: "PersonRow")
         
-        for (index, name) in data.enumerate() {
-            if let row: TableRowController = watchTable.rowControllerAtIndex(index) as? TableRowController {
+        for (index, name) in data.enumerated() {
+            if let row: TableRowController = watchTable.rowController(at: index) as? TableRowController {
                 row.personLabel.setText(name)
             }
         }
@@ -92,9 +92,9 @@ class InterfaceController: WKInterfaceController {
         self.refresh()
         // Add new button
         if self.personMode {
-            self.addMenuItemWithItemIcon(.Add, title: "Number", action: "changeMode")
+            self.addMenuItem(with: .add, title: "Number", action: #selector(InterfaceController.changeMode))
         } else {
-            self.addMenuItemWithItemIcon(.More, title: "People", action: "changeMode")
+            self.addMenuItem(with: .more, title: "People", action: #selector(InterfaceController.changeMode))
         }
     }
 }

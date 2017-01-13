@@ -24,17 +24,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func getData() -> String? {
-        let data: NSData? = NSData(contentsOfURL: NSURL(string: "http://api.open-notify.org/astros.json")!)
+        let data: Data? = try? Data(contentsOf: URL(string: "http://api.open-notify.org/astros.json")!)
         
         if let req = data {
             var parsedData: NSDictionary?
             do {
-                if let JSON: NSDictionary = try NSJSONSerialization.JSONObjectWithData(req, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary {
+                if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: req, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                     parsedData = JSON
                 }
                 
                 if let newData: NSDictionary = parsedData {
-                    if let number: Int = newData.valueForKey("number") as? Int {
+                    if let number: Int = newData.value(forKey: "number") as? Int {
                         return "\(number) astronauts are in space"
                     }
                 }
@@ -45,12 +45,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         return nil
     }
     
-    func widgetMarginInsetsForProposedMarginInsets
-        (defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
-            return UIEdgeInsetsZero
+    func widgetMarginInsets
+        (forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> (UIEdgeInsets) {
+            return UIEdgeInsets.zero
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
         // If an error is encountered, use NCUpdateResult.Failed
@@ -59,13 +59,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         if let numPeople: String = self.getData() {
             if numPeople == self.number.text {
-                completionHandler(NCUpdateResult.NoData)
+                completionHandler(NCUpdateResult.noData)
             } else {
                 self.number.text = numPeople
-                completionHandler(NCUpdateResult.NewData)
+                completionHandler(NCUpdateResult.newData)
             }
         } else {
-            completionHandler(NCUpdateResult.Failed)
+            completionHandler(NCUpdateResult.failed)
         }
     }
     

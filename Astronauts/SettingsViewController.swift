@@ -17,18 +17,18 @@ class SettingsViewController: UIViewController {
         if #available(iOS 8.0, *) { // Checks to see whether opening settings is possible; if not, don't show the button to do so
         } else {
             self.pushLabel.text = "\(self.pushLabel.text) go to Settings."
-            self.settingsButton.hidden = true
+            self.settingsButton.isHidden = true
         }
     }
     
-    @IBAction func dismiss(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismiss(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func openSettingsApp(sender: AnyObject) {
+    @IBAction func openSettingsApp(_ sender: AnyObject) {
         if #available(iOS 8.0, *) {
-            if let settingsURL: NSURL = NSURL(string: UIApplicationOpenSettingsURLString) { // Redundant check (just to make sure)
-                UIApplication.sharedApplication().openURL(settingsURL)
+            if let settingsURL: URL = URL(string: UIApplicationOpenSettingsURLString) { // Redundant check (just to make sure)
+                UIApplication.shared.openURL(settingsURL)
             }
         }
     }
