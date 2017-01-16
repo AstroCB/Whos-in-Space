@@ -25,7 +25,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -43,19 +43,6 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>Compose</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Sends an alert</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Alert me now</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>alert</string>
-		</dict>
-	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
