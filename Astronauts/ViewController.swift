@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SFSafariViewControllerDelegate {
     let height: CGFloat = UIScreen.main.bounds.size.height // Grab screen size
     
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
                 return JSON
             }
         } catch _ {
-            print("Error")
+            print("Error parsing")
         }
         
         return nil
@@ -81,10 +82,13 @@ class ViewController: UIViewController {
     
     func openUrl(_ url: String!) { // Opens URLs
         let targetURL = URL(string: url)!
-        let application = UIApplication.shared
-        
-        application.openURL(targetURL)
-        
+        if #available(iOS 9.0, *) { // Use SFSafariViewController if available
+            let svc: SFSafariViewController = SFSafariViewController(url: targetURL)
+            svc.delegate = self
+            self.present(svc, animated: true, completion: nil)
+        } else { // Just open in Safari
+            UIApplication.shared.openURL(targetURL)
+        }
     }
     
     func loadData(){
@@ -99,9 +103,9 @@ class ViewController: UIViewController {
             topConst = 1.05
         case 568: // 5/s
             constMultiplier = 1.05
-        case 667: // 6
+        case 667: // 6/7/s
             constMultiplier = 1.08
-        case 736: // 6 Plus
+        case 736: // 6/7/s Plus
             constMultiplier = 1.1
         default: // ??
             constMultiplier = 1.05
@@ -204,6 +208,11 @@ class ViewController: UIViewController {
     
     func openSettings() {
         self.performSegue(withIdentifier: "openSettings", sender: self)
+    }
+    
+    @available(iOS 9.0, *)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 

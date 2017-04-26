@@ -93,17 +93,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.httpBody = postString.data(using: .utf8)
         let task: URLSessionDataTask = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else { // Check for fundamental networking error
-                print("Error: \(error)")
+                print("Error: \(String(describing: error))")
                 return
             }
             
             if let httpStatus: HTTPURLResponse = response as? HTTPURLResponse, httpStatus.statusCode != 200 { // Check for HTTP errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("Response: \(response)")
+                print("Response: \(String(describing: response))")
             }
             
             let responseString: String? = String(data: data, encoding: .utf8)
-            print("responseString: \(responseString)")
+            print("responseString: \(String(describing: responseString))")
         }
         task.resume()
     }
