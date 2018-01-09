@@ -57,7 +57,7 @@ class InterfaceController: WKInterfaceController {
                         // Single number
                         if let number: Int = JSON.value(forKey: "number") as? Int {
                             let font: UIFont = UIFont.systemFont(ofSize: 25)
-                            let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSFontAttributeName: font])
+                            let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSAttributedStringKey.font: font])
                             self.numberLabel.setAttributedText(text)
                         }
                     }

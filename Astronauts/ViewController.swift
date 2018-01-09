@@ -75,7 +75,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         loadData()
     }
     
-    func labelTapped(_ sender: UIButton!) { // Handles button clicks
+    @objc func labelTapped(_ sender: UIButton!) { // Handles button clicks
         let urlIndex = sender.tag
         self.openUrl(urls[urlIndex])
     }
@@ -135,7 +135,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
                     
                     var encodedURL = ""
                     
-                    for j in name.characters {
+                    for j in name {
                         if j == " " {
                             encodedURL = encodedURL + "+"
                         } else {
@@ -206,7 +206,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     
-    func openSettings() {
+    @objc func openSettings() {
         self.performSegue(withIdentifier: "openSettings", sender: self)
     }
     

@@ -37,7 +37,7 @@ class GlanceInterfaceController: WKInterfaceController {
             if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: request, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
                 if let number: Int = JSON.value(forKey: "number") as? Int {
                     let font: UIFont = UIFont.systemFont(ofSize: 135)
-                    let attrString: NSAttributedString = NSAttributedString(string: "\(number)", attributes: [NSFontAttributeName: font])
+                    let attrString: NSAttributedString = NSAttributedString(string: "\(number)", attributes: [NSAttributedStringKey.font: font])
                     self.numberLabel.setAttributedText(attrString)
                 }
             }
