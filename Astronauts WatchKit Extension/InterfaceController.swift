@@ -9,6 +9,17 @@
 import WatchKit
 import Foundation
 
+// JSON decoding classes
+struct SpaceInfo: Decodable {
+    let number: Int
+    let people: [Person]
+    let message: String
+}
+
+struct Person: Decodable {
+    let craft: String
+    let name: String
+}
 
 class InterfaceController: WKInterfaceController {
     
@@ -37,43 +48,38 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func refresh() {
-        if let request: Data = try? Data(contentsOf: URL(string: "http://api.open-notify.org/astros.json")!) {
-            do {
-                if let JSON: NSDictionary = try JSONSerialization.jsonObject(with: request, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+        guard let url: URL = URL(string: "http://api.open-notify.org/astros.json") else { return }
+        URLSession.shared.dataTask(with: url) { (data, res, err) in
+            if let error: Error = err {
+                print("Error making request: \(error.localizedDescription)")
+            } else if let response: HTTPURLResponse = res as? HTTPURLResponse, response.statusCode != 200 {
+                print("Error receiving response: status code \(response.statusCode)")
+            } else if let rData: Data = data {
+                do {
+                    let info: SpaceInfo = try JSONDecoder().decode(SpaceInfo.self, from: rData)
+                    print(info.people)
                     if self.personMode {
                         // Table of astronauts
-                        if let people: [[String: AnyObject]] = JSON.value(forKey: "people") as? [[String: AnyObject]] {
-                            var names: [String] = [String]()
-                            
-                            for obj in people {
-                                if let name: String = obj["name"] as? String {
-                                    names.append(name)
-                                }
-                            }
-                            
-                            self.loadTableData(names)
-                        }
+                        self.loadTableData(info.people)
                     } else {
                         // Single number
-                        if let number: Int = JSON.value(forKey: "number") as? Int {
-                            let font: UIFont = UIFont.systemFont(ofSize: 25)
-                            let text: NSAttributedString = NSAttributedString(string: "\(number) astronauts are in space.", attributes: [NSAttributedStringKey.font: font])
-                            self.numberLabel.setAttributedText(text)
-                        }
+                        let font: UIFont = UIFont.systemFont(ofSize: 25)
+                        let text: NSAttributedString = NSAttributedString(string: "\(info.number) astronauts are in space.", attributes: [NSAttributedStringKey.font: font])
+                        self.numberLabel.setAttributedText(text)
                     }
+                } catch let jsonErr  {
+                    print("Error serializing JSON from request: \(jsonErr.localizedDescription)")
                 }
-            } catch _ {
-                print("Error")
             }
-        }
+        }.resume()
     }
     
-    func loadTableData(_ data: [String]) {
+    func loadTableData(_ data: [Person]) {
         self.watchTable.setNumberOfRows(data.count, withRowType: "PersonRow")
         
-        for (index, name) in data.enumerated() {
+        for (index, person) in data.enumerated() {
             if let row: TableRowController = watchTable.rowController(at: index) as? TableRowController {
-                row.personLabel.setText(name)
+                row.personLabel.setText(person.name)
             }
         }
     }

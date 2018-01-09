@@ -83,8 +83,8 @@
       allowLocationSimulation = "YES">
       <RemoteRunnable
          runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.springboard"
-         RemotePath = "/Astronauts">
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/In Space?">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DAF8B3C1A40BF4A0058491B"
