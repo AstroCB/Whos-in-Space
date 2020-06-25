@@ -8,14 +8,27 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AstronautView: View {
+    var astronauts: [Astronaut] = []
+    
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List(astronauts) { astronaut in
+                NavigationLink(destination: Text(astronaut.name)) {
+                    VStack(alignment: .leading) {
+                        Text(astronaut.name)
+                        Text(astronaut.craft)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AstronautView(astronauts: testData)
     }
 }

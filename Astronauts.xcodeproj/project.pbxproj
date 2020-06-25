@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		9D3F4F6724A48D23003C5FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */; };
 		9D3F4F6924A48D23003C5FAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */; };
-		9D3F4F6B24A48D23003C5FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6A24A48D23003C5FAA /* ContentView.swift */; };
+		9D3F4F6B24A48D23003C5FAA /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6A24A48D23003C5FAA /* AstronautView.swift */; };
 		9D3F4F6D24A48D24003C5FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */; };
 		9D3F4F7024A48D24003C5FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6F24A48D24003C5FAA /* Preview Assets.xcassets */; };
 		9D3F4F7324A48D24003C5FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */; };
+		9D3F4F7B24A49226003C5FAA /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7A24A49226003C5FAA /* Astronaut.swift */; };
+		9D3F4F7D24A49814003C5FAA /* AstronautDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9D3F4F6324A48D23003C5FAA /* Astronauts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronauts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D3F4F6A24A48D23003C5FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D3F4F6A24A48D23003C5FAA /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3F4F6F24A48D24003C5FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D3F4F7224A48D24003C5FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D3F4F7424A48D24003C5FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3F4F7A24A49226003C5FAA /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
+		9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */,
 				9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */,
-				9D3F4F6A24A48D23003C5FAA /* ContentView.swift */,
+				9D3F4F7A24A49226003C5FAA /* Astronaut.swift */,
+				9D3F4F6A24A48D23003C5FAA /* AstronautView.swift */,
+				9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */,
 				9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */,
 				9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */,
 				9D3F4F7424A48D24003C5FAA /* Info.plist */,
@@ -148,7 +154,9 @@
 			files = (
 				9D3F4F6724A48D23003C5FAA /* AppDelegate.swift in Sources */,
 				9D3F4F6924A48D23003C5FAA /* SceneDelegate.swift in Sources */,
-				9D3F4F6B24A48D23003C5FAA /* ContentView.swift in Sources */,
+				9D3F4F6B24A48D23003C5FAA /* AstronautView.swift in Sources */,
+				9D3F4F7B24A49226003C5FAA /* Astronaut.swift in Sources */,
+				9D3F4F7D24A49814003C5FAA /* AstronautDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
