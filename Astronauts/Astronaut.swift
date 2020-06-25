@@ -8,10 +8,16 @@
 
 import Foundation
 
+let API_URL = "http://api.open-notify.org/astros.json"
+
 struct Astronaut: Codable, Identifiable {
-    var id = UUID()
     var name: String
     var craft: String
+    
+    var id: UUID {
+        return UUID()
+    }
+    
     var url: URL? {
         // Google encodes spaces as +
         let encodedName = name.replacingOccurrences(of: " ", with: "+")
@@ -23,6 +29,18 @@ struct APIResponse: Codable {
     var message: String
     var number: Int
     var people: [Astronaut]
+}
+
+func retrieveData() -> APIResponse {
+    if let url = URL(string: API_URL), let data = try? Data(contentsOf: url) {
+        let decoder = JSONDecoder()
+        
+        if let response = try? decoder.decode(APIResponse.self, from: data) {
+            return response
+        }
+    }
+    
+    return APIResponse(message: "failure", number: 0, people: [])
 }
 
 

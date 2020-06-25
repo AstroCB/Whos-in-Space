@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AstronautView: View {
-    var astronauts: [Astronaut] = []
+    var astronauts: [Astronaut]
     
     var body: some View {
         NavigationView {
@@ -23,25 +23,10 @@ struct AstronautView: View {
                     AstroCell(astronaut: astronaut)
                 }
             }
-            Text("Select an astronaut!")
             .navigationBarTitle("Who's in space?")
+            Text("Select an astronaut!")
+                .font(.title)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        AstronautView(astronauts: testData)
-    }
-}
-
-struct AstroDestination: View {
-    var astronaut: Astronaut
-    
-    var body: some View {
-        AstronautDetail(astronaut: astronaut)
-            .edgesIgnoringSafeArea(.bottom)
-            .navigationBarTitle(astronaut.name)
     }
 }
 
@@ -58,5 +43,22 @@ struct AstroCell: View {
                     .foregroundColor(.secondary)
             }
         }
+    }
+}
+
+struct AstroDestination: View {
+    var astronaut: Astronaut
+    
+    var body: some View {
+        AstronautDetail(astronaut: astronaut)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarTitle(astronaut.name)
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        AstronautView(astronauts: testData)
     }
 }
