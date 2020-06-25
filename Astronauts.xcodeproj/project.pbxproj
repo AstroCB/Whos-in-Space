@@ -3,173 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D044A5E1ACB91FE00428D96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D044A5D1ACB91FE00428D96 /* Images.xcassets */; };
-		9D15564D1A6E003100DBF8AA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */; };
-		9D41675C1BB631C000932D7B /* Astronauts WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9D41675F1BB631C000932D7B /* Astronauts WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */; };
-		9D53EFE21A6BA9E100F90C21 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFE11A6BA9E100F90C21 /* AudioToolbox.framework */; };
-		9D53EFE41A6BA9F000F90C21 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFE31A6BA9F000F90C21 /* CFNetwork.framework */; };
-		9D53EFE61A6BAA0000F90C21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFE51A6BAA0000F90C21 /* CoreGraphics.framework */; };
-		9D53EFE81A6BAA0F00F90C21 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFE71A6BAA0F00F90C21 /* CoreLocation.framework */; };
-		9D53EFEA1A6BAA1900F90C21 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFE91A6BAA1900F90C21 /* MobileCoreServices.framework */; };
-		9D53EFEC1A6BAA2200F90C21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFEB1A6BAA2200F90C21 /* QuartzCore.framework */; };
-		9D53EFEE1A6BAA2C00F90C21 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFED1A6BAA2C00F90C21 /* Security.framework */; };
-		9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */; };
-		9D887E451AB7CAE2003AEE34 /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D887E441AB7CAE2003AEE34 /* TableRowController.swift */; };
-		9DA078321A5659DB001308B9 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D38816D1A563FC500A322A5 /* NotificationCenter.framework */; };
-		9DA078371A5659DB001308B9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA078361A5659DB001308B9 /* TodayViewController.swift */; };
-		9DA078391A5659DB001308B9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA078381A5659DB001308B9 /* MainInterface.storyboard */; };
-		9DA0783C1A5659DB001308B9 /* Astronauts Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9DAF8B361A40BF4A0058491B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF8B351A40BF4A0058491B /* InterfaceController.swift */; };
-		9DAF8B3A1A40BF4A0058491B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B391A40BF4A0058491B /* Images.xcassets */; };
-		9DAF8B451A40BF4B0058491B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAF8B441A40BF4B0058491B /* Interface.storyboard */; };
-		9DD3E7C819764896008DC6D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7C719764896008DC6D6 /* AppDelegate.swift */; };
-		9DD3E7CA19764896008DC6D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7C919764896008DC6D6 /* ViewController.swift */; };
-		9DD3E7CD19764896008DC6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD3E7CB19764896008DC6D6 /* Main.storyboard */; };
-		9DD3E7CF19764896008DC6D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD3E7CE19764896008DC6D6 /* Images.xcassets */; };
-		9DD3E7DB19764896008DC6D6 /* AstronautsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD3E7DA19764896008DC6D6 /* AstronautsTests.swift */; };
+		9D3F4F6724A48D23003C5FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */; };
+		9D3F4F6924A48D23003C5FAA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */; };
+		9D3F4F6B24A48D23003C5FAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6A24A48D23003C5FAA /* ContentView.swift */; };
+		9D3F4F6D24A48D24003C5FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */; };
+		9D3F4F7024A48D24003C5FAA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F6F24A48D24003C5FAA /* Preview Assets.xcassets */; };
+		9D3F4F7324A48D24003C5FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		9D41675A1BB631C000932D7B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DD3E7BA19764896008DC6D6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DAF8B301A40BF4A0058491B;
-			remoteInfo = "Astronauts WatchKit Extension";
-		};
-		9D41675D1BB631C000932D7B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DD3E7BA19764896008DC6D6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DAF8B3C1A40BF4A0058491B;
-			remoteInfo = "Astronauts WatchKit App";
-		};
-		9DA0783A1A5659DB001308B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DD3E7BA19764896008DC6D6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DA078301A5659DB001308B9;
-			remoteInfo = "Astronauts Today Extension";
-		};
-		9DD3E7D519764896008DC6D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DD3E7BA19764896008DC6D6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9DD3E7C119764896008DC6D6;
-			remoteInfo = Astronauts;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		9D4167601BB631C100932D7B /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				9D41675C1BB631C000932D7B /* Astronauts WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D4167611BB631C100932D7B /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				9D41675F1BB631C000932D7B /* Astronauts WatchKit App.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DAF8B511A40BF4B0058491B /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				9DA0783C1A5659DB001308B9 /* Astronauts Today Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		9D044A5D1ACB91FE00428D96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9D38816D1A563FC500A322A5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		9D3921851ADDD82300100A9C /* Astronauts WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Astronauts WatchKit Extension.entitlements"; sourceTree = "<group>"; };
-		9D53EFE11A6BA9E100F90C21 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9D53EFE31A6BA9F000F90C21 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		9D53EFE51A6BAA0000F90C21 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9D53EFE71A6BAA0F00F90C21 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9D53EFE91A6BAA1900F90C21 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		9D53EFEB1A6BAA2200F90C21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9D53EFED1A6BAA2C00F90C21 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9D887E441AB7CAE2003AEE34 /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
-		9DA0782C1A565915001308B9 /* Astronauts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Astronauts.entitlements; sourceTree = "<group>"; };
-		9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Astronauts Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DA078351A5659DB001308B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DA078361A5659DB001308B9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		9DA078381A5659DB001308B9 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Astronauts WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DAF8B341A40BF4A0058491B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DAF8B351A40BF4A0058491B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		9DAF8B391A40BF4A0058491B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Astronauts WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DAF8B431A40BF4B0058491B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DAF8B441A40BF4B0058491B /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
-		9DD3E7C219764896008DC6D6 /* Astronauts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronauts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DD3E7C619764896008DC6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DD3E7C719764896008DC6D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9DD3E7C919764896008DC6D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9DD3E7CC19764896008DC6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9DD3E7CE19764896008DC6D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9DD3E7D419764896008DC6D6 /* AstronautsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstronautsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DD3E7D919764896008DC6D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DD3E7DA19764896008DC6D6 /* AstronautsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsTests.swift; sourceTree = "<group>"; };
+		9D3F4F6324A48D23003C5FAA /* Astronauts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Astronauts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9D3F4F6A24A48D23003C5FAA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D3F4F6F24A48D24003C5FAA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D3F4F7224A48D24003C5FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D3F4F7424A48D24003C5FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9DA0782E1A5659DB001308B9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DA078321A5659DB001308B9 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DAF8B2E1A40BF4A0058491B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7BF19764896008DC6D6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D53EFF21A6BAA3C00F90C21 /* SystemConfiguration.framework in Frameworks */,
-				9D53EFEE1A6BAA2C00F90C21 /* Security.framework in Frameworks */,
-				9D53EFEC1A6BAA2200F90C21 /* QuartzCore.framework in Frameworks */,
-				9D53EFEA1A6BAA1900F90C21 /* MobileCoreServices.framework in Frameworks */,
-				9D53EFE81A6BAA0F00F90C21 /* CoreLocation.framework in Frameworks */,
-				9D53EFE61A6BAA0000F90C21 /* CoreGraphics.framework in Frameworks */,
-				9D53EFE41A6BA9F000F90C21 /* CFNetwork.framework in Frameworks */,
-				9D53EFE21A6BA9E100F90C21 /* AudioToolbox.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7D119764896008DC6D6 /* Frameworks */ = {
+		9D3F4F6024A48D23003C5FAA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,595 +37,172 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D38816C1A563FC500A322A5 /* Frameworks */ = {
+		9D3F4F5A24A48D23003C5FAA = {
 			isa = PBXGroup;
 			children = (
-				9D53EFF11A6BAA3C00F90C21 /* SystemConfiguration.framework */,
-				9D53EFED1A6BAA2C00F90C21 /* Security.framework */,
-				9D53EFEB1A6BAA2200F90C21 /* QuartzCore.framework */,
-				9D53EFE91A6BAA1900F90C21 /* MobileCoreServices.framework */,
-				9D53EFE71A6BAA0F00F90C21 /* CoreLocation.framework */,
-				9D53EFE51A6BAA0000F90C21 /* CoreGraphics.framework */,
-				9D53EFE31A6BA9F000F90C21 /* CFNetwork.framework */,
-				9D53EFE11A6BA9E100F90C21 /* AudioToolbox.framework */,
-				9D38816D1A563FC500A322A5 /* NotificationCenter.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9DA078331A5659DB001308B9 /* Astronauts Today Extension */ = {
-			isa = PBXGroup;
-			children = (
-				9DA078361A5659DB001308B9 /* TodayViewController.swift */,
-				9DA078381A5659DB001308B9 /* MainInterface.storyboard */,
-				9DA078341A5659DB001308B9 /* Supporting Files */,
-			);
-			path = "Astronauts Today Extension";
-			sourceTree = "<group>";
-		};
-		9DA078341A5659DB001308B9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9DA078351A5659DB001308B9 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9DAF8B321A40BF4A0058491B /* Astronauts WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				9D3921851ADDD82300100A9C /* Astronauts WatchKit Extension.entitlements */,
-				9DAF8B351A40BF4A0058491B /* InterfaceController.swift */,
-				9D887E441AB7CAE2003AEE34 /* TableRowController.swift */,
-				9DAF8B391A40BF4A0058491B /* Images.xcassets */,
-				9DAF8B331A40BF4A0058491B /* Supporting Files */,
-			);
-			path = "Astronauts WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		9DAF8B331A40BF4A0058491B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9DAF8B341A40BF4A0058491B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9DAF8B411A40BF4B0058491B /* Astronauts WatchKit App */ = {
-			isa = PBXGroup;
-			children = (
-				9DAF8B441A40BF4B0058491B /* Interface.storyboard */,
-				9D044A5D1ACB91FE00428D96 /* Images.xcassets */,
-				9DAF8B421A40BF4B0058491B /* Supporting Files */,
-			);
-			path = "Astronauts WatchKit App";
-			sourceTree = "<group>";
-		};
-		9DAF8B421A40BF4B0058491B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9DAF8B431A40BF4B0058491B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9DD3E7B919764896008DC6D6 = {
-			isa = PBXGroup;
-			children = (
-				9DD3E7C419764896008DC6D6 /* Astronauts */,
-				9DD3E7D719764896008DC6D6 /* AstronautsTests */,
-				9DAF8B321A40BF4A0058491B /* Astronauts WatchKit Extension */,
-				9DAF8B411A40BF4B0058491B /* Astronauts WatchKit App */,
-				9DA078331A5659DB001308B9 /* Astronauts Today Extension */,
-				9D38816C1A563FC500A322A5 /* Frameworks */,
-				9DD3E7C319764896008DC6D6 /* Products */,
+				9D3F4F6524A48D23003C5FAA /* Astronauts */,
+				9D3F4F6424A48D23003C5FAA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9DD3E7C319764896008DC6D6 /* Products */ = {
+		9D3F4F6424A48D23003C5FAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DD3E7C219764896008DC6D6 /* Astronauts.app */,
-				9DD3E7D419764896008DC6D6 /* AstronautsTests.xctest */,
-				9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */,
-				9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */,
-				9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */,
+				9D3F4F6324A48D23003C5FAA /* Astronauts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DD3E7C419764896008DC6D6 /* Astronauts */ = {
+		9D3F4F6524A48D23003C5FAA /* Astronauts */ = {
 			isa = PBXGroup;
 			children = (
-				9DA0782C1A565915001308B9 /* Astronauts.entitlements */,
-				9DD3E7C719764896008DC6D6 /* AppDelegate.swift */,
-				9DD3E7C919764896008DC6D6 /* ViewController.swift */,
-				9D15564C1A6E003100DBF8AA /* SettingsViewController.swift */,
-				9DD3E7CB19764896008DC6D6 /* Main.storyboard */,
-				9DD3E7CE19764896008DC6D6 /* Images.xcassets */,
-				9DD3E7C519764896008DC6D6 /* Supporting Files */,
+				9D3F4F6624A48D23003C5FAA /* AppDelegate.swift */,
+				9D3F4F6824A48D23003C5FAA /* SceneDelegate.swift */,
+				9D3F4F6A24A48D23003C5FAA /* ContentView.swift */,
+				9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */,
+				9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */,
+				9D3F4F7424A48D24003C5FAA /* Info.plist */,
+				9D3F4F6E24A48D24003C5FAA /* Preview Content */,
 			);
 			path = Astronauts;
 			sourceTree = "<group>";
 		};
-		9DD3E7C519764896008DC6D6 /* Supporting Files */ = {
+		9D3F4F6E24A48D24003C5FAA /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				9DD3E7C619764896008DC6D6 /* Info.plist */,
+				9D3F4F6F24A48D24003C5FAA /* Preview Assets.xcassets */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9DD3E7D719764896008DC6D6 /* AstronautsTests */ = {
-			isa = PBXGroup;
-			children = (
-				9DD3E7DA19764896008DC6D6 /* AstronautsTests.swift */,
-				9DD3E7D819764896008DC6D6 /* Supporting Files */,
-			);
-			path = AstronautsTests;
-			sourceTree = "<group>";
-		};
-		9DD3E7D819764896008DC6D6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9DD3E7D919764896008DC6D6 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9DA078301A5659DB001308B9 /* Astronauts Today Extension */ = {
+		9D3F4F6224A48D23003C5FAA /* Astronauts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DA0783D1A5659DB001308B9 /* Build configuration list for PBXNativeTarget "Astronauts Today Extension" */;
+			buildConfigurationList = 9D3F4F7724A48D24003C5FAA /* Build configuration list for PBXNativeTarget "Astronauts" */;
 			buildPhases = (
-				9DA0782D1A5659DB001308B9 /* Sources */,
-				9DA0782E1A5659DB001308B9 /* Frameworks */,
-				9DA0782F1A5659DB001308B9 /* Resources */,
+				9D3F4F5F24A48D23003C5FAA /* Sources */,
+				9D3F4F6024A48D23003C5FAA /* Frameworks */,
+				9D3F4F6124A48D23003C5FAA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Astronauts Today Extension";
-			productName = "Astronauts Today Extension";
-			productReference = 9DA078311A5659DB001308B9 /* Astronauts Today Extension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		9DAF8B301A40BF4A0058491B /* Astronauts WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DAF8B501A40BF4B0058491B /* Build configuration list for PBXNativeTarget "Astronauts WatchKit Extension" */;
-			buildPhases = (
-				9DAF8B2D1A40BF4A0058491B /* Sources */,
-				9DAF8B2E1A40BF4A0058491B /* Frameworks */,
-				9DAF8B2F1A40BF4A0058491B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Astronauts WatchKit Extension";
-			productName = "Astronauts WatchKit Extension";
-			productReference = 9DAF8B311A40BF4A0058491B /* Astronauts WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		9DAF8B3C1A40BF4A0058491B /* Astronauts WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DAF8B4F1A40BF4B0058491B /* Build configuration list for PBXNativeTarget "Astronauts WatchKit App" */;
-			buildPhases = (
-				9DAF8B3B1A40BF4A0058491B /* Resources */,
-				9D4167601BB631C100932D7B /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9D41675B1BB631C000932D7B /* PBXTargetDependency */,
-			);
-			name = "Astronauts WatchKit App";
-			productName = "Astronauts WatchKit App";
-			productReference = 9DAF8B3D1A40BF4B0058491B /* Astronauts WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		9DD3E7C119764896008DC6D6 /* Astronauts */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DD3E7DE19764896008DC6D6 /* Build configuration list for PBXNativeTarget "Astronauts" */;
-			buildPhases = (
-				9DD3E7BE19764896008DC6D6 /* Sources */,
-				9DD3E7BF19764896008DC6D6 /* Frameworks */,
-				9DD3E7C019764896008DC6D6 /* Resources */,
-				9DAF8B511A40BF4B0058491B /* Embed App Extensions */,
-				9D4167611BB631C100932D7B /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9DA0783B1A5659DB001308B9 /* PBXTargetDependency */,
-				9D41675E1BB631C000932D7B /* PBXTargetDependency */,
 			);
 			name = Astronauts;
 			productName = Astronauts;
-			productReference = 9DD3E7C219764896008DC6D6 /* Astronauts.app */;
+			productReference = 9D3F4F6324A48D23003C5FAA /* Astronauts.app */;
 			productType = "com.apple.product-type.application";
-		};
-		9DD3E7D319764896008DC6D6 /* AstronautsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DD3E7E119764896008DC6D6 /* Build configuration list for PBXNativeTarget "AstronautsTests" */;
-			buildPhases = (
-				9DD3E7D019764896008DC6D6 /* Sources */,
-				9DD3E7D119764896008DC6D6 /* Frameworks */,
-				9DD3E7D219764896008DC6D6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9DD3E7D619764896008DC6D6 /* PBXTargetDependency */,
-			);
-			name = AstronautsTests;
-			productName = AstronautsTests;
-			productReference = 9DD3E7D419764896008DC6D6 /* AstronautsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9DD3E7BA19764896008DC6D6 /* Project object */ = {
+		9D3F4F5B24A48D23003C5FAA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0920;
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Cameron Bernhardt";
 				TargetAttributes = {
-					9DA078301A5659DB001308B9 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = VFK9RBFX9F;
-						LastSwiftMigration = 0920;
-					};
-					9DAF8B301A40BF4A0058491B = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = VFK9RBFX9F;
-						LastSwiftMigration = 0920;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
-							};
-						};
-					};
-					9DAF8B3C1A40BF4A0058491B = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = VFK9RBFX9F;
-						LastSwiftMigration = 0920;
-					};
-					9DD3E7C119764896008DC6D6 = {
-						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = VFK9RBFX9F;
-						LastSwiftMigration = 0920;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 0;
-							};
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
-					};
-					9DD3E7D319764896008DC6D6 = {
-						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0920;
-						TestTargetID = 9DD3E7C119764896008DC6D6;
+					9D3F4F6224A48D23003C5FAA = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
-			buildConfigurationList = 9DD3E7BD19764896008DC6D6 /* Build configuration list for PBXProject "Astronauts" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 9D3F4F5E24A48D23003C5FAA /* Build configuration list for PBXProject "Astronauts" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 9DD3E7B919764896008DC6D6;
-			productRefGroup = 9DD3E7C319764896008DC6D6 /* Products */;
+			mainGroup = 9D3F4F5A24A48D23003C5FAA;
+			productRefGroup = 9D3F4F6424A48D23003C5FAA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DD3E7C119764896008DC6D6 /* Astronauts */,
-				9DD3E7D319764896008DC6D6 /* AstronautsTests */,
-				9DAF8B301A40BF4A0058491B /* Astronauts WatchKit Extension */,
-				9DAF8B3C1A40BF4A0058491B /* Astronauts WatchKit App */,
-				9DA078301A5659DB001308B9 /* Astronauts Today Extension */,
+				9D3F4F6224A48D23003C5FAA /* Astronauts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9DA0782F1A5659DB001308B9 /* Resources */ = {
+		9D3F4F6124A48D23003C5FAA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA078391A5659DB001308B9 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DAF8B2F1A40BF4A0058491B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DAF8B3A1A40BF4A0058491B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DAF8B3B1A40BF4A0058491B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DAF8B451A40BF4B0058491B /* Interface.storyboard in Resources */,
-				9D044A5E1ACB91FE00428D96 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7C019764896008DC6D6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DD3E7CD19764896008DC6D6 /* Main.storyboard in Resources */,
-				9DD3E7CF19764896008DC6D6 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7D219764896008DC6D6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9D3F4F7324A48D24003C5FAA /* LaunchScreen.storyboard in Resources */,
+				9D3F4F7024A48D24003C5FAA /* Preview Assets.xcassets in Resources */,
+				9D3F4F6D24A48D24003C5FAA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9DA0782D1A5659DB001308B9 /* Sources */ = {
+		9D3F4F5F24A48D23003C5FAA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA078371A5659DB001308B9 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DAF8B2D1A40BF4A0058491B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DAF8B361A40BF4A0058491B /* InterfaceController.swift in Sources */,
-				9D887E451AB7CAE2003AEE34 /* TableRowController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7BE19764896008DC6D6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DD3E7CA19764896008DC6D6 /* ViewController.swift in Sources */,
-				9DD3E7C819764896008DC6D6 /* AppDelegate.swift in Sources */,
-				9D15564D1A6E003100DBF8AA /* SettingsViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9DD3E7D019764896008DC6D6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9DD3E7DB19764896008DC6D6 /* AstronautsTests.swift in Sources */,
+				9D3F4F6724A48D23003C5FAA /* AppDelegate.swift in Sources */,
+				9D3F4F6924A48D23003C5FAA /* SceneDelegate.swift in Sources */,
+				9D3F4F6B24A48D23003C5FAA /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9D41675B1BB631C000932D7B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DAF8B301A40BF4A0058491B /* Astronauts WatchKit Extension */;
-			targetProxy = 9D41675A1BB631C000932D7B /* PBXContainerItemProxy */;
-		};
-		9D41675E1BB631C000932D7B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DAF8B3C1A40BF4A0058491B /* Astronauts WatchKit App */;
-			targetProxy = 9D41675D1BB631C000932D7B /* PBXContainerItemProxy */;
-		};
-		9DA0783B1A5659DB001308B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DA078301A5659DB001308B9 /* Astronauts Today Extension */;
-			targetProxy = 9DA0783A1A5659DB001308B9 /* PBXContainerItemProxy */;
-		};
-		9DD3E7D619764896008DC6D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9DD3E7C119764896008DC6D6 /* Astronauts */;
-			targetProxy = 9DD3E7D519764896008DC6D6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		9DD3E7CB19764896008DC6D6 /* Main.storyboard */ = {
+		9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9DD3E7CC19764896008DC6D6 /* Base */,
+				9D3F4F7224A48D24003C5FAA /* Base */,
 			);
-			name = Main.storyboard;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9DA0783E1A5659DB001308B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Astronauts Today Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.Astronauts.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		9DA0783F1A5659DB001308B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "Astronauts Today Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.Astronauts.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		9DAF8B4B1A40BF4B0058491B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Astronauts WatchKit Extension/Astronauts WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Astronauts WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		9DAF8B4C1A40BF4B0058491B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Astronauts WatchKit Extension/Astronauts WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "Astronauts WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		9DAF8B4D1A40BF4B0058491B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = Astronauts_WatchKit_Extension;
-				INFOPLIST_FILE = "Astronauts WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		9DAF8B4E1A40BF4B0058491B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IBSC_MODULE = Astronauts_WatchKit_Extension;
-				INFOPLIST_FILE = "Astronauts WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		9DD3E7DC19764896008DC6D6 /* Debug */ = {
+		9D3F4F7524A48D24003C5FAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -775,53 +210,59 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		9DD3E7DD19764896008DC6D6 /* Release */ = {
+		9D3F4F7624A48D24003C5FAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -829,161 +270,82 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9DD3E7DF19764896008DC6D6 /* Debug */ = {
+		9D3F4F7824A48D24003C5FAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Astronauts/Astronauts.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Astronauts/Preview Content\"";
+				DEVELOPMENT_TEAM = VFK9RBFX9F;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Astronauts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9DD3E7E019764896008DC6D6 /* Release */ = {
+		9D3F4F7924A48D24003C5FAA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Astronauts/Astronauts.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Astronauts/Preview Content\"";
+				DEVELOPMENT_TEAM = VFK9RBFX9F;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Astronauts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cameronbernhardt.Astronauts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		9DD3E7E219764896008DC6D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Astronauts.app/Astronauts";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AstronautsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		9DD3E7E319764896008DC6D6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Astronauts.app/Astronauts";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = AstronautsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cameronbernhardt.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9DA0783D1A5659DB001308B9 /* Build configuration list for PBXNativeTarget "Astronauts Today Extension" */ = {
+		9D3F4F5E24A48D23003C5FAA /* Build configuration list for PBXProject "Astronauts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DA0783E1A5659DB001308B9 /* Debug */,
-				9DA0783F1A5659DB001308B9 /* Release */,
+				9D3F4F7524A48D24003C5FAA /* Debug */,
+				9D3F4F7624A48D24003C5FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DAF8B4F1A40BF4B0058491B /* Build configuration list for PBXNativeTarget "Astronauts WatchKit App" */ = {
+		9D3F4F7724A48D24003C5FAA /* Build configuration list for PBXNativeTarget "Astronauts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DAF8B4D1A40BF4B0058491B /* Debug */,
-				9DAF8B4E1A40BF4B0058491B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9DAF8B501A40BF4B0058491B /* Build configuration list for PBXNativeTarget "Astronauts WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DAF8B4B1A40BF4B0058491B /* Debug */,
-				9DAF8B4C1A40BF4B0058491B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9DD3E7BD19764896008DC6D6 /* Build configuration list for PBXProject "Astronauts" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DD3E7DC19764896008DC6D6 /* Debug */,
-				9DD3E7DD19764896008DC6D6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9DD3E7DE19764896008DC6D6 /* Build configuration list for PBXNativeTarget "Astronauts" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DD3E7DF19764896008DC6D6 /* Debug */,
-				9DD3E7E019764896008DC6D6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9DD3E7E119764896008DC6D6 /* Build configuration list for PBXNativeTarget "AstronautsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DD3E7E219764896008DC6D6 /* Debug */,
-				9DD3E7E319764896008DC6D6 /* Release */,
+				9D3F4F7824A48D24003C5FAA /* Debug */,
+				9D3F4F7924A48D24003C5FAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9DD3E7BA19764896008DC6D6 /* Project object */;
+	rootObject = 9D3F4F5B24A48D23003C5FAA /* Project object */;
 }
