@@ -10,6 +10,11 @@ import SwiftUI
 
 struct AstronautView: View {
     var astronauts: [Astronaut]
+    var description: String {
+        "\(astronauts.count) astronauts are in space! Find out who they are by downloading Who's in Space? from the app store: https://apple.co/2Z7MpeA"
+    }
+    
+    @State var showingSheet = false
     
     var body: some View {
         NavigationView {
@@ -22,6 +27,12 @@ struct AstronautView: View {
                 List(astronauts) { astronaut in
                     AstroCell(astronaut: astronaut)
                 }
+                HStack {
+                    Spacer()
+                    ShareButton(showingSheet: $showingSheet, items: [self.description])
+                    Spacer()
+                }
+                .padding()
             }
             .navigationBarTitle("Who's in space?")
             Text("Select an astronaut!")
