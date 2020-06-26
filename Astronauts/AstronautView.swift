@@ -33,8 +33,11 @@ struct AstronautView: View {
 struct AstroCell: View {
     var astronaut: Astronaut
     
+    // Used to dismiss the nav view from UIKit
+    @State var isActive = false
+    
     var body: some View {
-        NavigationLink(destination: AstroDestination(astronaut: astronaut)) {
+        NavigationLink(destination: AstroDestination(astronaut: astronaut, isActive: $isActive), isActive: $isActive) {
             VStack(alignment: .leading) {
                 Text(astronaut.name)
                     .font(.headline)
@@ -49,10 +52,15 @@ struct AstroCell: View {
 struct AstroDestination: View {
     var astronaut: Astronaut
     
+    @Binding var isActive: Bool
+    
     var body: some View {
-        AstronautDetail(astronaut: astronaut)
+        AstronautDetail(astronaut: astronaut, isActive: $isActive)
             .edgesIgnoringSafeArea(.all)
             .navigationBarTitle(astronaut.name)
+            .onTapGesture {
+                self.isActive = true
+        }
     }
 }
 

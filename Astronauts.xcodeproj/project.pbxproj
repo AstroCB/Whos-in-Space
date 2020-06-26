@@ -15,6 +15,7 @@
 		9D3F4F7324A48D24003C5FAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */; };
 		9D3F4F7B24A49226003C5FAA /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7A24A49226003C5FAA /* Astronaut.swift */; };
 		9D3F4F7D24A49814003C5FAA /* AstronautDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */; };
+		9D87704B24A57A2A00CC4440 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D87704A24A57A2A00CC4440 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9D3F4F7424A48D24003C5FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3F4F7A24A49226003C5FAA /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautDetail.swift; sourceTree = "<group>"; };
+		9D87704A24A57A2A00CC4440 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				9D3F4F7A24A49226003C5FAA /* Astronaut.swift */,
 				9D3F4F6A24A48D23003C5FAA /* AstronautView.swift */,
 				9D3F4F7C24A49814003C5FAA /* AstronautDetail.swift */,
+				9D87704A24A57A2A00CC4440 /* SafariView.swift */,
 				9D3F4F6C24A48D24003C5FAA /* Assets.xcassets */,
 				9D3F4F7124A48D24003C5FAA /* LaunchScreen.storyboard */,
 				9D3F4F7424A48D24003C5FAA /* Info.plist */,
@@ -156,6 +159,7 @@
 				9D3F4F6924A48D23003C5FAA /* SceneDelegate.swift in Sources */,
 				9D3F4F6B24A48D23003C5FAA /* AstronautView.swift in Sources */,
 				9D3F4F7B24A49226003C5FAA /* Astronaut.swift in Sources */,
+				9D87704B24A57A2A00CC4440 /* SafariView.swift in Sources */,
 				9D3F4F7D24A49814003C5FAA /* AstronautDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
